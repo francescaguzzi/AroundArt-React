@@ -1,0 +1,143 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-image: url("/images/photo_2023-11-20_16-58-24%20(2)-1500w.jpg");
+  background-position: right;
+}
+.login-login {
+  gap: 10px;
+  width: 100%;
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  height: auto;
+  display: flex;
+  padding: 49px 0;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.login-frame {
+  gap: 35px;
+  width: 100%;
+  height: 780px;
+  display: flex;
+  padding: 0 0 0 5px;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.login-logo {
+  width: 358px;
+  height: 358px;
+}
+.login-loginbuttons {
+  flex: 1;
+  left: 0px;
+  right: 0px;
+  width: 373px;
+  bottom: 45px;
+  height: 396px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.login-loginpopup {
+  top: 29px;
+  left: 0px;
+  right: 0px;
+  width: 336px;
+  height: 322px;
+  margin: auto;
+  position: absolute;
+  border-radius: 33px;
+}
+.login-password {
+  top: 150px;
+  left: 0px;
+  right: 0px;
+  width: 238px;
+  height: 35px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 1);
+}
+.login-text {
+  top: 8px;
+  left: 13.53383731842041px;
+  color: rgb(136, 136, 136);
+  width: 208px;
+  height: auto;
+  position: absolute;
+  font-size: 13px;
+  font-style: Regular;
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-username {
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  width: 238px;
+  height: 35px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 1);
+}
+.login-text3 {
+  top: 8px;
+  left: 13.53383731842041px;
+  color: rgba(136, 136, 136, 1);
+  width: 208px;
+  height: auto;
+  position: absolute;
+  font-size: 13px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-confirmbutton {
+  top: 250px;
+  left: 0px;
+  right: 0px;
+  width: 55px;
+  height: 55px;
+  margin: auto;
+  position: absolute;
+}
+.login-navlink {
+  display: contents;
+}
+.login-closebutton {
+  top: 50px;
+  left: 260px;
+  right: 0px;
+  width: 23px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  text-decoration: none;
+}
