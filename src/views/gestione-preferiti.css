@@ -1,0 +1,31 @@
+.gestione-preferiti-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #e7e4e0;
+}
+.gestione-preferiti-lista-opere {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-self: center;
+  margin-top: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+}
+.gestione-preferiti-button {
+  color: var(--dl-color-gray-white);
+  width: var(--dl-size-size-xlarge);
+  height: var(--dl-size-size-small);
+  align-self: center;
+  font-style: normal;
+  margin-top: var(--dl-space-space-unit);
+  font-weight: 700;
+  border-width: 0px;
+  border-radius: 15px;
+  background-color: var(--dl-color-primary-100);
+}

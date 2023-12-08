@@ -1,0 +1,107 @@
+.gestione-utente-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #e7e4e0;
+}
+.gestione-utente-container1 {
+  gap: var(--dl-space-space-unit);
+  width: 100%;
+  height: 694px;
+  display: flex;
+  position: relative;
+  align-self: center;
+  margin-top: var(--dl-space-space-threeunits);
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.gestione-utente-vector {
+  width: 157px;
+  height: 157px;
+  align-self: flex-start;
+  margin-top: var(--dl-space-space-fourunits);
+  margin-left: var(--dl-space-space-threeunits);
+  margin-right: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.gestione-utente-text {
+  color: rgba(85, 85, 85, 1);
+  width: 238px;
+  height: auto;
+  font-size: 24px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: var(--dl-space-space-threeunits);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.gestione-utente-text2 {
+  color: rgba(85, 85, 85, 1);
+  width: 285px;
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: var(--dl-space-space-threeunits);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.gestione-utente-modificabutton {
+  width: 221px;
+  height: 45px;
+  align-self: flex-start;
+  margin-top: var(--dl-space-space-threeunits);
+  margin-left: var(--dl-space-space-threeunits);
+  border-width: 0px;
+  margin-right: var(--dl-space-space-threeunits);
+  border-radius: 17px;
+  background-color: #B0AFAE;
+}
+.gestione-utente-text4 {
+  color: rgba(85, 85, 85, 1);
+  width: 138px;
+  height: auto;
+  z-index: 0;
+  font-size: 18px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.gestione-utente-eliminabutton {
+  width: 221px;
+  height: 45px;
+  margin-left: var(--dl-space-space-threeunits);
+  border-width: 0px;
+  border-radius: 17px;
+  background-color: #ED574E;
+}
+.gestione-utente-text6 {
+  color: rgb(255, 255, 255);
+  width: 138px;
+  height: auto;
+  font-size: 18px;
+  font-style: Bold;
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
 
+import SearchBar from '../components/search-bar'
+import MainMenu from '../components/main-menu'
 import './navigazione-mappa.css'
 
 const NavigazioneMappa = (props) => {
@@ -15,13 +16,12 @@ const NavigazioneMappa = (props) => {
           content="NavigazioneMappa - exported project"
         />
       </Helmet>
-      <div className="navigazione-mappa-container1">
-        <div className="navigazione-mappa-container2">
-          <Script
-            html={`<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=11.309823989868166%2C44.473787379849135%2C11.368188858032228%2C44.51266581694186&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=14/44.4932/11.3390">Visualizza mappa ingrandita</a></small>`}
-          ></Script>
-        </div>
-      </div>
+      <iframe
+        src="https://www.google.com/maps/d/u/0/embed?mid=1ctIRrSf7MX488x6zcixQ5RZs_8jiUBM&amp;ehbc=2E312F&amp;noprof=1"
+        className="navigazione-mappa-iframe"
+      ></iframe>
+      <SearchBar rootClassName="search-bar-root-class-name"></SearchBar>
+      <MainMenu rootClassName="main-menu-root-class-name"></MainMenu>
     </div>
   )
 }

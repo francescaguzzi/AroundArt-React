@@ -1,0 +1,73 @@
+.evento-lista-container {
+  width: 350px;
+  display: flex;
+  position: relative;
+  border-color: #E8E8E8;
+  border-width: 2px;
+  border-radius: 15px;
+  margin-bottom: var(--dl-space-space-unit);
+  background-color: var(--dl-color-gray-white);
+}
+.evento-lista-container1 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+  flex-direction: column;
+}
+.evento-lista-titolo {
+  color: rgb(92, 92, 92);
+  width: 230px;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: Bold;
+  margin-top: var(--dl-space-space-unit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 700;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+.evento-lista-artista {
+  color: rgb(92, 92, 92);
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+.evento-lista-artista1 {
+  color: #888484;
+  width: 230px;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+
+
+

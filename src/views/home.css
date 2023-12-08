@@ -1,107 +1,77 @@
 .home-container {
   width: 100%;
   display: flex;
+  z-index: 100;
   overflow: auto;
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
   background-size: cover;
-  background-image: url("/images/photo_2023-11-20_16-58-24%20(2)-1500w.jpg");
+  background-image: url("/grafiche/photo_2023-11-20_16-58-24%20(2)-1500w.jpg");
 }
 .home-home {
-  gap: 54px;
+  gap: var(--dl-space-space-unit);
   width: 100%;
   height: 1001px;
   display: flex;
-  padding: 49px 0;
   overflow: hidden;
-  align-items: center;
-  flex-shrink: 0;
-  flex-direction: column;
-}
-.home-logo {
-  height: 450px;
-  align-self: center;
-}
-.home-loginbuttons {
-  width: 349px;
-  height: 193px;
-  display: flex;
   position: relative;
   align-items: center;
   flex-shrink: 0;
-  justify-content: center;
+  padding-top: var(--dl-space-space-fiveunits);
+  flex-direction: column;
+  padding-bottom: var(--dl-space-space-fiveunits);
 }
-.home-navlink {
-  display: contents;
-}
-.home-signinbutton {
-  top: 0px;
-  left: 0px;
-  width: 348px;
-  height: 123px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-  text-decoration: none;
-}
-.home-rectangle1 {
-  top: 9px;
-  left: 0px;
-  right: 0px;
-  width: 347px;
-  height: 105px;
-  margin: auto;
-  position: absolute;
+.home-logo {
+  width: 436px;
+  height: 436px;
+  z-index: 50;
   align-self: center;
 }
+.home-registrati {
+  color: #5D5C5C;
+  width: 300px;
+  height: 51px;
+  align-self: center;
+  box-shadow: 5px 5px 10px 0px #292929;
+  margin-top: var(--dl-space-space-threeunits);
+  text-align: center;
+  border-width: 0px;
+  border-radius: 30px;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  background-color: #E7E4E0;
+}
 .home-text {
-  top: 43px;
-  left: 0px;
-  color: rgba(92, 92, 92, 1);
-  right: 0px;
+  color: rgb(92, 92, 92);
   width: 157px;
   height: auto;
-  margin: auto;
-  position: absolute;
   font-size: 16px;
-  align-self: flex-start;
+  align-self: center;
   font-style: Bold;
   text-align: center;
-  font-family: Arimo;
+  font-family: "Arimo";
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
 }
-.home-navlink1 {
-  display: contents;
-}
-.home-loginbutton {
-  width: 349px;
-  height: 50%;
-  display: flex;
-  align-self: flex-end;
-  align-items: flex-start;
-  flex-shrink: 1;
-  text-decoration: none;
-}
-.home-rectangle11 {
-  width: 100%;
-  height: 110px;
+.home-accedi {
+  color: #5D5C5C;
+  width: 300px;
+  height: 51px;
   align-self: center;
-  box-shadow: 1px 9px 12px 0px rgba(0, 0, 0, 0.25) ;
+  box-shadow: 5px 5px 10px 0px #292929;
+  text-align: center;
+  border-width: 0px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: #E7E4E0;
 }
-.home-text2 {
-  left: 0px;
+.home-text3 {
   color: rgba(92, 92, 92, 1);
-  right: 0px;
   width: 157px;
-  bottom: 50px;
   height: auto;
-  margin: auto;
-  position: absolute;
   font-size: 16px;
   align-self: center;
   font-style: Bold;

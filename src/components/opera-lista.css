@@ -1,0 +1,89 @@
+.opera-lista-container {
+  width: 397px;
+  display: flex;
+  position: relative;
+  border-color: #E8E8E8;
+  border-width: 2px;
+  border-radius: 15px;
+  margin-bottom: var(--dl-space-space-unit);
+  background-color: var(--dl-color-gray-white);
+}
+.opera-lista-image {
+  width: 70px;
+  height: 70px;
+  margin-top: var(--dl-space-space-unit);
+  object-fit: cover;
+  margin-left: var(--dl-space-space-unit);
+  margin-right: var(--dl-space-space-unit);
+  border-radius: 33px;
+  margin-bottom: var(--dl-space-space-unit);
+}
+.opera-lista-container1 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.opera-lista-titolo {
+  color: rgb(92, 92, 92);
+  width: 230px;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: Bold;
+  margin-top: var(--dl-space-space-unit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 700;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+.opera-lista-artista {
+  color: rgb(92, 92, 92);
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+.opera-lista-artista1 {
+  color: #888484;
+  width: 230px;
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: left;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: normal;
+  margin-left: var(--dl-space-space-halfunit);
+  font-stretch: normal;
+  margin-right: var(--dl-space-space-halfunit);
+  margin-bottom: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+.opera-lista-delete-icon {
+  fill: var(--dl-color-gray-700);
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  margin-right: var(--dl-space-space-halfunit);
+}
+
+
+

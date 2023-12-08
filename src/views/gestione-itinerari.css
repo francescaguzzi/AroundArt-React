@@ -1,0 +1,19 @@
+.gestione-itinerari-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #e7e4e0;
+}
+.gestione-itinerari-container1 {
+  width: auto;
+  height: 490px;
+  align-self: flex-start;
+  margin-top: 180px;
+  align-items: flex-start;
+  margin-left: var(--dl-space-space-fourunits);
+  flex-direction: column;
+}

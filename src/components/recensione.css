@@ -1,0 +1,49 @@
+.recensione-samplerecensione {
+  width: 308px;
+  height: 79px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 1;
+  border-color: #E8E8E8;
+  border-width: 1px;
+  border-radius: 10px;
+  margin-bottom: var(--dl-space-space-unit);
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+.recensione-data {
+  top: 15px;
+  color: rgb(136, 136, 136);
+  right: 22px;
+  width: 94px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: italic;
+  text-align: right;
+  font-family: "Arimo";
+  font-weight: 400;
+  line-height: 100%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.recensione-user {
+  top: 10px;
+  left: 10px;
+  color: #565656;
+  width: var(--dl-size-size-xlarge);
+  position: absolute;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+.recensione-content {
+  top: 31px;
+  left: 10px;
+  color: #5D5C5C;
+  width: 280px;
+  height: 40px;
+  position: absolute;
+  font-size: 13px;
+}
