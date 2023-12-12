@@ -19,21 +19,21 @@ const GestioneItinerari = (props) => {
       </Helmet>
       <div className="gestione-itinerari-container1">
         <ItinerarioLista
-          rootClassName="itinerario-lista-root-class-name"
           titolo="Itinerario 1"
+          rootClassName="itinerario-lista-root-class-name"
         ></ItinerarioLista>
         <ItinerarioLista
-          rootClassName="itinerario-lista-root-class-name1"
           titolo="Itinerario 2"
+          rootClassName="itinerario-lista-root-class-name1"
         ></ItinerarioLista>
         <ItinerarioLista
-          rootClassName="itinerario-lista-root-class-name2"
           titolo="Itinerario 3"
+          rootClassName="itinerario-lista-root-class-name2"
         ></ItinerarioLista>
       </div>
       <VisualizzaItinerario
-        rootClassName="visualizza-itinerario-root-class-name"
         titolo="Itinerario 1"
+        rootClassName="visualizza-itinerario-root-class-name"
       ></VisualizzaItinerario>
       <MainMenu rootClassName="main-menu-root-class-name2"></MainMenu>
     </div>

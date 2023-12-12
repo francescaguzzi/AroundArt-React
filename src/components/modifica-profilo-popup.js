@@ -18,7 +18,7 @@ const ModificaProfiloPopup = (props) => {
           id="username"
           name="username"
           required
-          placeholder={props.usernamePlaceholder}
+          placeholder={props.username_placeholder}
           className="modifica-profilo-popup-username input"
         />
         <input
@@ -26,7 +26,7 @@ const ModificaProfiloPopup = (props) => {
           id="password"
           name="password"
           required
-          placeholder={props.passwordPlaceholder}
+          placeholder={props.password_placeholder}
           className="modifica-profilo-popup-password input"
         />
         <input
@@ -34,18 +34,18 @@ const ModificaProfiloPopup = (props) => {
           id="email"
           name="email"
           required
-          placeholder={props.emailPlaceholder}
+          placeholder={props.email_placeholder}
           className="modifica-profilo-popup-email input"
         />
         <img
-          alt={props.confirmbuttonAlt}
-          src={props.confirmbuttonSrc}
+          alt={props.confirmbutton_alt}
+          src={props.confirmbutton_src}
           onClick={() => setIsVisible(false)}
           className="modifica-profilo-popup-confirmbutton"
         />
         <img
-          alt={props.closebuttonAlt}
-          src={props.closebuttonSrc}
+          alt={props.closebutton_alt}
+          src={props.closebutton_src}
           onClick={() => setIsVisible(false)}
           className="modifica-profilo-popup-closebutton"
         />
@@ -55,24 +55,24 @@ const ModificaProfiloPopup = (props) => {
 }
 
 ModificaProfiloPopup.defaultProps = {
-  usernamePlaceholder: 'Username',
-  closebuttonSrc: '/ui-basic/closebuttoni532-mchd.svg',
-  closebuttonAlt: 'closebuttonI532',
-  passwordPlaceholder: 'Password',
-  emailPlaceholder: 'E-mail',
-  confirmbuttonAlt: 'confirmbuttonI532',
-  confirmbuttonSrc: '/ui-basic/confirmbuttoni532-o9ab.svg',
+  username_placeholder: 'Username',
+  closebutton_src: '/ui-basic/closebuttoni532-mchd.svg',
+  closebutton_alt: 'closebuttonI532',
+  password_placeholder: 'Password',
+  email_placeholder: 'E-mail',
+  confirmbutton_alt: 'confirmbuttonI532',
+  confirmbutton_src: '/ui-basic/confirmbuttoni532-o9ab.svg',
   rootClassName: '',
 }
 
 ModificaProfiloPopup.propTypes = {
-  usernamePlaceholder: PropTypes.string,
-  closebuttonSrc: PropTypes.string,
-  closebuttonAlt: PropTypes.string,
-  passwordPlaceholder: PropTypes.string,
-  emailPlaceholder: PropTypes.string,
-  confirmbuttonAlt: PropTypes.string,
-  confirmbuttonSrc: PropTypes.string,
+  username_placeholder: PropTypes.string,
+  closebutton_src: PropTypes.string,
+  closebutton_alt: PropTypes.string,
+  password_placeholder: PropTypes.string,
+  email_placeholder: PropTypes.string,
+  confirmbutton_alt: PropTypes.string,
+  confirmbutton_src: PropTypes.string,
   rootClassName: PropTypes.string,
 }
 

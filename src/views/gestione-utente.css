@@ -23,7 +23,7 @@
 .gestione-utente-vector {
   width: 157px;
   height: 157px;
-  align-self: flex-start;
+  align-self: center;
   margin-top: var(--dl-space-space-fourunits);
   margin-left: var(--dl-space-space-threeunits);
   margin-right: var(--dl-space-space-threeunits);
@@ -34,8 +34,9 @@
   width: 238px;
   height: auto;
   font-size: 24px;
+  align-self: center;
   font-style: Bold;
-  text-align: left;
+  text-align: center;
   font-family: Arimo;
   font-weight: 700;
   line-height: normal;
@@ -49,8 +50,9 @@
   width: 285px;
   height: auto;
   font-size: 20px;
+  align-self: center;
   font-style: Regular;
-  text-align: left;
+  text-align: center;
   font-family: Arimo;
   font-weight: 400;
   line-height: normal;
@@ -62,7 +64,7 @@
 .gestione-utente-modificabutton {
   width: 221px;
   height: 45px;
-  align-self: flex-start;
+  align-self: center;
   margin-top: var(--dl-space-space-threeunits);
   margin-left: var(--dl-space-space-threeunits);
   border-width: 0px;
@@ -87,7 +89,7 @@
 .gestione-utente-eliminabutton {
   width: 221px;
   height: 45px;
-  margin-left: var(--dl-space-space-threeunits);
+  align-self: center;
   border-width: 0px;
   border-radius: 17px;
   background-color: #ED574E;

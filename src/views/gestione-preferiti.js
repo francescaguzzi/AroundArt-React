@@ -19,29 +19,29 @@ const GestionePreferiti = (props) => {
       <div className="gestione-preferiti-lista-opere">
         <OperaLista
           artista="Exit Enter"
-          imageSrc="/opere/exit_via-belle-arti-%232_0-200h.jpg"
+          image_src="/opere/exit_via-belle-arti-%232_0-200h.jpg"
           indirizzo="Via delle Belle Arti"
           rootClassName="opera-lista-root-class-name"
         ></OperaLista>
         <OperaLista
           artista="EricaIlCane"
-          imageSrc="/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg"
+          image_src="/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg"
           indirizzo="via Mascarella 26A, libreria Moda Infoshop"
         ></OperaLista>
         <OperaLista
           artista="About Ponny"
-          imageSrc="/opere/via-del-pratello-89_2b_carlos-atoche-200h.jpg"
+          image_src="/opere/via-del-pratello-89_2b_carlos-atoche-200h.jpg"
           indirizzo="Via del Pratello, 90"
         ></OperaLista>
         <OperaLista
           titolo="500 Anni dalla Conquista dell'America"
           artista="Luis Gutierrez"
-          imageSrc="/opere/gutierrez_zamboni3-200h.png"
+          image_src="/opere/gutierrez_zamboni3-200h.png"
           indirizzo="Via Zamboni 38"
         ></OperaLista>
         <OperaLista
           artista="Arianna Vauro"
-          imageSrc="/opere/vicolo%20facchini_ariannavauro_0-200h.jpg"
+          image_src="/opere/vicolo%20facchini_ariannavauro_0-200h.jpg"
           indirizzo="Vicolo de Facchini 7/2"
           rootClassName="opera-lista-root-class-name1"
         ></OperaLista>

@@ -58,12 +58,10 @@
   text-decoration: none;
 }
 .main-menu-menubar-user {
-  top: 67px;
-  left: 0px;
-  right: 0px;
-  width: 377px;
-  bottom: 10px;
-  height: 82px;
+  left: 1px;
+  width: auto;
+  bottom: 6px;
+  height: 90px;
   margin: auto;
   display: none;
   position: absolute;
@@ -97,10 +95,10 @@
 }
 .main-menu-usericon1 {
   fill: #d9d9d9;
-  left: 60px;
-  width: 24px;
-  bottom: 71px;
-  height: 24px;
+  left: 56px;
+  width: 30px;
+  bottom: 67px;
+  height: 30px;
   position: absolute;
   text-decoration: none;
 }

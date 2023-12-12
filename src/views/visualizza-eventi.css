@@ -5,13 +5,12 @@
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: #e7e4e0;
 }
 .visualizza-eventi-listaeventi {
   flex: 0 0 auto;
   display: flex;
-  margin-top: var(--dl-space-space-threeunits);
   align-items: flex-start;
   flex-direction: column;
 }

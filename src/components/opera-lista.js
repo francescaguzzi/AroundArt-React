@@ -8,8 +8,8 @@ const OperaLista = (props) => {
   return (
     <div className={`opera-lista-container ${props.rootClassName} `}>
       <img
-        alt={props.imageAlt}
-        src={props.imageSrc}
+        alt={props.image_alt}
+        src={props.image_src}
         className="opera-lista-image"
       />
       <div className="opera-lista-container1">
@@ -37,18 +37,18 @@ OperaLista.defaultProps = {
   indirizzo: 'indirizzo',
   titolo: 'Senza titolo',
   rootClassName: '',
-  imageAlt: 'image',
+  image_alt: 'image',
   artista: 'artista',
-  imageSrc: '',
+  image_src: '',
 }
 
 OperaLista.propTypes = {
   indirizzo: PropTypes.string,
   titolo: PropTypes.string,
   rootClassName: PropTypes.string,
-  imageAlt: PropTypes.string,
+  image_alt: PropTypes.string,
   artista: PropTypes.string,
-  imageSrc: PropTypes.string,
+  image_src: PropTypes.string,
 }
 
 export default OperaLista
