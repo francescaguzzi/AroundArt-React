@@ -31,8 +31,8 @@ const SearchBar = (props) => {
             className="search-bar-textinput input"
           />
           <img
-            alt={props.imageAlt2}
-            src={props.imageSrc2}
+            alt={props.image_alt2}
+            src={props.image_src2}
             onClick={() => setIsVisible(false)}
             className="search-bar-closebutton"
           />
@@ -43,32 +43,32 @@ const SearchBar = (props) => {
 }
 
 SearchBar.defaultProps = {
-  imageAlt1: 'image',
-  imageSrc1: 'https://play.teleporthq.io/static/svg/default-img.svg',
-  imageAlt: 'image',
+  image_alt1: 'image',
+  image_src1: 'https://play.teleporthq.io/static/svg/default-img.svg',
+  image_alt: 'image',
   rootClassName: '',
-  imageSrc2: '/external/closeicon2710-77uh.svg',
-  imageSrc: 'https://play.teleporthq.io/static/svg/default-img.svg',
-  searchiconAlt: 'searchicon2314',
-  searchiconSrc:
+  image_src2: '/external/closeicon2710-77uh.svg',
+  image_src: 'https://play.teleporthq.io/static/svg/default-img.svg',
+  searchicon_alt: 'searchicon2314',
+  searchicon_src:
     'https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/845d69ee-3bfd-4357-9c75-cfcd407d59a6/3e302343-1f8f-475b-b828-a23973899ed9?org_if_sml=11732&force_format=original',
-  textinputPlaceholder: 'placeholder',
+  textinput_placeholder: 'placeholder',
   text: 'Label',
-  imageAlt2: 'image',
+  image_alt2: 'image',
 }
 
 SearchBar.propTypes = {
-  imageAlt1: PropTypes.string,
-  imageSrc1: PropTypes.string,
-  imageAlt: PropTypes.string,
+  image_alt1: PropTypes.string,
+  image_src1: PropTypes.string,
+  image_alt: PropTypes.string,
   rootClassName: PropTypes.string,
-  imageSrc2: PropTypes.string,
-  imageSrc: PropTypes.string,
-  searchiconAlt: PropTypes.string,
-  searchiconSrc: PropTypes.string,
-  textinputPlaceholder: PropTypes.string,
+  image_src2: PropTypes.string,
+  image_src: PropTypes.string,
+  searchicon_alt: PropTypes.string,
+  searchicon_src: PropTypes.string,
+  textinput_placeholder: PropTypes.string,
   text: PropTypes.string,
-  imageAlt2: PropTypes.string,
+  image_alt2: PropTypes.string,
 }
 
 export default SearchBar

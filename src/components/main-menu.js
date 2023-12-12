@@ -251,17 +251,17 @@ const MainMenu = (props) => {
 
 MainMenu.defaultProps = {
   rootClassName: '',
-  menubarSrc:
+  menubar_src:
     'https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/845d69ee-3bfd-4357-9c75-cfcd407d59a6/f1f8d502-633c-4472-8446-dd9e09474b9e?org_if_sml=1594&force_format=original',
-  menucomponentSrc1: 'f6886bb1-c11c-410a-a4b7-666c3fbc952f',
-  menubarAlt: 'menubar2543',
+  menucomponent_src1: 'f6886bb1-c11c-410a-a4b7-666c3fbc952f',
+  menubar_alt: 'menubar2543',
 }
 
 MainMenu.propTypes = {
   rootClassName: PropTypes.string,
-  menubarSrc: PropTypes.string,
-  menucomponentSrc1: PropTypes.string,
-  menubarAlt: PropTypes.string,
+  menubar_src: PropTypes.string,
+  menucomponent_src1: PropTypes.string,
+  menubar_alt: PropTypes.string,
 }
 
 export default MainMenu

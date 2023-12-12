@@ -1,39 +1,19 @@
 .itinerario-lista-container {
-  width: auto;
+  width: 150px;
+  height: 150px;
+  margin: var(--dl-space-space-unit);
   display: flex;
   position: relative;
-  border-radius: 15px;
-  margin-bottom: var(--dl-space-space-unit);
-  justify-content: center;
-}
-.itinerario-lista-list-item {
-  width: 221px;
-  display: flex;
-  border-color: #d0d0d0;
+  align-items: stretch;
+  border-color: #c462ed;
   border-width: 2px;
   border-radius: 15px;
-  justify-content: center;
-  background-color: var(--dl-color-gray-white);
-}
-.itinerario-lista-icon {
-  fill: #765ce1;
-  width: 30px;
-  height: 30px;
-  align-self: center;
-  margin-left: var(--dl-space-space-unit);
-  margin-right: var(--dl-space-space-unit);
-}
-.itinerario-lista-container1 {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-self: flex-start;
   flex-direction: column;
   justify-content: center;
+  background-image: radial-gradient(circle at center, rgb(169, 55, 238) 0.00%,rgb(225, 146, 34) 100.00%);
 }
 .itinerario-lista-titolo {
-  color: rgb(92, 92, 92);
+  color: var(--dl-color-gray-white);
   width: auto;
   height: auto;
   font-size: 16px;
@@ -50,8 +30,8 @@
   margin-bottom: var(--dl-space-space-unit);
   text-decoration: none;
 }
-.itinerario-lista-icon2 {
-  fill: #765ce1;
+.itinerario-lista-icon {
+  fill: var(--dl-color-gray-white);
   width: 40px;
   height: 40px;
   align-self: center;

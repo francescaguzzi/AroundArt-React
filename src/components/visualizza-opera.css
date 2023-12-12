@@ -15,82 +15,76 @@
   left: 0px;
   right: 0px;
   width: 302px;
-  height: 390px;
+  height: 412px;
   margin: auto;
   display: flex;
   position: absolute;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .visualizza-opera-image1 {
-  top: 0px;
-  left: 65px;
   width: 163px;
   height: 150px;
   z-index: 1;
-  position: absolute;
   border-radius: 25px;
 }
 .visualizza-opera-titolo {
-  top: 165px;
-  left: 0px;
   color: rgba(92, 92, 92, 1);
-  position: absolute;
+  align-self: flex-start;
   font-style: normal;
+  margin-top: var(--dl-space-space-unit);
   font-weight: 700;
 }
 .visualizza-opera-indirizzo {
-  top: 190px;
-  left: 0px;
   color: rgba(239, 117, 29, 1);
-  position: absolute;
   font-size: 13px;
+  align-self: flex-start;
   font-style: italic;
+  margin-top: 3px;
   font-weight: 400;
 }
 .visualizza-opera-data {
-  left: 0px;
   color: rgba(92, 92, 92, 1);
-  bottom: 165.0520830154419px;
-  position: absolute;
   font-size: 13px;
+  align-self: flex-start;
   font-style: italic;
+  margin-top: 5px;
   font-weight: 400;
 }
 .visualizza-opera-descrizione {
-  left: 0px;
   color: rgba(136, 136, 136, 1);
   width: 302px;
-  bottom: 138.90625px;
-  position: absolute;
   font-size: 14px;
+  align-self: flex-start;
+  margin-top: 5px;
   text-align: left;
+  margin-bottom: 4px;
 }
 .visualizza-opera-bottonerecensioni {
-  left: 96px;
+  right: 0px;
   width: 206px;
   bottom: 0px;
   height: 32px;
   display: flex;
-  z-index: 6;
+  z-index: 0;
   position: absolute;
-  align-items: flex-start;
+  align-self: flex-end;
+  align-items: flex-end;
   flex-shrink: 1;
   border-width: 0px;
   border-radius: 20px;
+  justify-content: flex-start;
   background-color: rgba(255, 145, 77, 1);
 }
 .visualizza-opera-text {
-  top: 9px;
-  left: 21px;
   color: rgba(255, 255, 255, 1);
   width: 130px;
   height: auto;
-  position: absolute;
   font-size: 14px;
+  align-self: center;
   font-style: Bold;
-  text-align: left;
+  text-align: center;
   font-family: Arimo;
   font-weight: 700;
   line-height: 100%;
@@ -98,20 +92,20 @@
   text-decoration: none;
 }
 .visualizza-opera-vector {
-  top: 11px;
-  left: 173px;
   width: 19px;
   height: 11px;
-  position: absolute;
+  align-self: center;
   box-sizing: content-box;
 }
 .visualizza-opera-heartcheckbox {
-  top: 173px;
-  right: 37px;
+  top: 125px;
+  right: 16px;
   width: 30px;
   height: 26px;
+  margin: auto;
   z-index: 7;
   position: absolute;
+  align-self: flex-end;
 }
 .visualizza-opera-scheda-recensioni {
   top: 24px;
@@ -224,4 +218,13 @@
   border-width: 0px;
   border-radius: 17px;
   background-color: #FF8F3E;
+}
+.visualizza-opera-root-class-name {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  display: none;
+  position: absolute;
 }
