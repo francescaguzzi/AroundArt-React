@@ -1,408 +1,104 @@
 .main-menu-container {
-  width: auto;
-  height: auto;
   display: flex;
-  position: relative;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
+
 .main-menu-menubar-default {
-  gap: var(--dl-space-space-threeunits);
-  width: auto;
-  height: 90px;
   display: flex;
   align-items: center;
-  border-radius: 30px;
-  background-size: cover;
-  justify-content: flex-start;
-  background-image: url("/external/menubar2543-13cn.svg");
-  background-position: center;
-}
-.main-menu-navlink {
-  display: contents;
-}
-.main-menu-usericon {
-  fill: #d9d9d9;
-  width: 30px;
-  height: 30px;
-  margin-left: var(--dl-space-space-fourunits);
-  text-decoration: none;
-}
-.main-menu-navlink01 {
-  display: contents;
-}
-.main-menu-itineraryicon {
-  fill: #D9D9D9;
-  width: 30px;
-  height: 30px;
-  text-decoration: none;
-}
-.main-menu-navlink02 {
-  display: contents;
-}
-.main-menu-favoritesicon {
-  fill: #D9D9D9;
-  width: 30px;
-  height: 30px;
-  text-decoration: none;
-}
-.main-menu-navlink03 {
-  display: contents;
-}
-.main-menu-eventsicon {
-  fill: #D9D9D9;
-  width: 30px;
-  height: 30px;
-  margin-right: var(--dl-space-space-fourunits);
-  text-decoration: none;
-}
-.main-menu-menubar-user {
-  left: 1px;
-  width: auto;
-  bottom: 6px;
   height: 90px;
-  margin: auto;
-  position: absolute;
   background-size: cover;
   background-image: url("/external/menubar2543-13cn.svg");
   background-position: center;
 }
-.main-menu-ellipsecircle {
-  left: 15px;
-  width: 117px;
-  bottom: 42.19px;
-  height: 67.80719757080078px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.main-menu-ellipse1 {
-  top: 20px;
-  left: 0px;
-  width: 117px;
-  height: 48px;
-  position: absolute;
-}
-.main-menu-menucircle {
-  top: 0px;
-  left: 29px;
-  width: 55px;
-  height: 55px;
-  position: absolute;
-}
-.main-menu-usericon1 {
-  fill: #d9d9d9;
-  left: 56px;
-  width: 30px;
-  bottom: 67px;
-  height: 30px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-itineraryicon1 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 137px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-favoritesicon1 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 217px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-eventsicon1 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 297px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-menubar-itinerary {
-  top: 67px;
-  left: 0px;
-  right: 0px;
-  width: 377px;
-  bottom: 10px;
-  height: 82px;
-  margin: auto;
-  position: absolute;
-  background-size: cover;
-  background-image: url("/external/menubar2543-13cn.svg");
-  background-position: center;
-}
-.main-menu-ellipsecircle1 {
-  left: 93px;
-  width: 116.5px;
-  bottom: 42.70px;
-  height: 67.80718994140625px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.main-menu-ellipse11 {
-  top: 18.499975204467773px;
-  left: 0px;
-  width: 116px;
-  height: 49px;
-  position: absolute;
-}
-.main-menu-menucircle1 {
-  top: 0px;
-  left: 28.5px;
-  width: 55px;
-  height: 55px;
-  position: absolute;
-}
-.main-menu-usericon2 {
-  top: 30px;
-  fill: #d9d9d9;
-  left: 60px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-itineraryicon2 {
-  fill: #D9D9D9;
-  left: 137px;
-  width: 24px;
-  bottom: 71px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-favoritesicon2 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 217px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-eventsicon2 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 297px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-menubar-favorites {
-  top: 67px;
-  left: 0px;
-  right: 0px;
-  width: 377px;
-  bottom: 10px;
-  height: 82px;
-  margin: auto;
-  position: absolute;
-  background-size: cover;
-  background-image: url("/external/menubar2543-13cn.svg");
-  background-position: center;
-}
-.main-menu-ellipsecircle2 {
-  left: 173px;
-  width: 116.5px;
-  bottom: 42.70px;
-  height: 67.80718994140625px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.main-menu-ellipse12 {
-  top: 17.499975204467773px;
-  left: 0px;
-  width: 116px;
-  height: 50px;
-  position: absolute;
-}
-.main-menu-menucircle2 {
-  top: 0px;
-  left: 28.5px;
-  width: 55px;
-  height: 55px;
-  position: absolute;
-}
-.main-menu-usericon3 {
-  top: 30px;
-  fill: #d9d9d9;
-  left: 60px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-itineraryicon3 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 137px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-favoritesicon3 {
-  fill: #D9D9D9;
-  left: 217px;
-  width: 24px;
-  bottom: 71px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-eventsicon3 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 297px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
+
+.main-menu-menubar-user,
+.main-menu-menubar-itinerary,
+.main-menu-menubar-favorites,
 .main-menu-menubar-events {
-  top: 67px;
-  left: 0px;
-  right: 0px;
-  width: 377px;
-  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
   height: 82px;
-  margin: auto;
-  position: absolute;
   background-size: cover;
   background-image: url("/external/menubar2543-13cn.svg");
   background-position: center;
 }
-.main-menu-ellipsecircle3 {
-  left: 252px;
-  width: 111px;
-  bottom: 43px;
-  height: 67.80718231201172px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
+
+.main-menu-navlink {
+  margin-left: var(--dl-space-space-fourunits);
+  margin-right: var(--dl-space-space-fourunits);
 }
-.main-menu-ellipse13 {
-  top: 17.499975204467773px;
-  left: 0px;
-  width: 111px;
-  height: 50px;
-  position: absolute;
-}
-.main-menu-menucircle3 {
-  top: 0px;
-  left: 28.5px;
-  width: 55px;
-  height: 55px;
-  position: absolute;
-}
-.main-menu-usericon4 {
-  top: 30px;
+
+.main-menu-usericon,
+.main-menu-itineraryicon,
+.main-menu-favoritesicon,
+.main-menu-eventsicon {
   fill: #d9d9d9;
-  left: 60px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
+  width: 30px;
+  height: 30px;
 }
-.main-menu-itineraryicon4 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 137px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-favoritesicon4 {
-  top: 30px;
-  fill: #D9D9D9;
-  left: 217px;
-  width: 24px;
-  bottom: 30px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
-.main-menu-eventsicon4 {
-  fill: #D9D9D9;
-  left: 297px;
-  width: 24px;
-  bottom: 71px;
-  height: 24px;
-  position: absolute;
-  text-decoration: none;
-}
+
 .main-menu-root-class-name {
-  left: 0px;
-  right: 0px;
-  bottom: var(--dl-space-space-twounits);
-  position: absolute;
-  align-self: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
-.main-menu-root-class-name1 {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  position: absolute;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--dl-space-space-twounits);
+
+/* Aggiungi regole per gli altri root class name se necessario */
+.main-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.main-menu-root-class-name2 {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  position: absolute;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--dl-space-space-twounits);
+
+.main-menu-menubar-default {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  background-size: cover;
+  background-image: url("/external/menubar2543-13cn.svg");
+  background-position: center;
 }
-.main-menu-root-class-name3 {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  position: absolute;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--dl-space-space-twounits);
+
+.main-menu-menubar-user,
+.main-menu-menubar-itinerary,
+.main-menu-menubar-favorites,
+.main-menu-menubar-events {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 82px;
+  background-size: cover;
+  background-image: url("/external/menubar2543-13cn.svg");
+  background-position: center;
 }
-.main-menu-root-class-name4 {
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  position: absolute;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--dl-space-space-twounits);
+
+.main-menu-navlink {
+  margin-left: var(--dl-space-space-fourunits);
+  margin-right: var(--dl-space-space-fourunits);
 }
+
+.main-menu-usericon,
+.main-menu-itineraryicon,
+.main-menu-favoritesicon,
+.main-menu-eventsicon {
+  fill: #d9d9d9;
+  width: 30px;
+  height: 30px;
+}
+
+.main-menu-root-class-name {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Aggiungi regole per gli altri root class name se necessario */
