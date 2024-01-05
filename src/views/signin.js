@@ -76,7 +76,7 @@ const Signin = (props) => {
           <span className="signin-privacy">
             <span>Ho letto e acconsento l&apos;</span>
             <a
-              href="https://culonudo.com"
+              href="https://isitwednesday.vercel.app/"
               target="_blank"
               rel="noreferrer noopener"
               className="signin-link"
