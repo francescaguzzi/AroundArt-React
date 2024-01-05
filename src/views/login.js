@@ -27,7 +27,7 @@ const Login = (props) => {
 
     } else {
       console.log('username o password errati');
-      setErrorMessage('Credenziali non valide. Riprova.');
+      setErrorMessage('    Credenziali non valide. Riprova.');
     }
   }
 
@@ -51,7 +51,6 @@ const Login = (props) => {
             className="login-closebutton"
           />
         </Link>
-        {errorMessage && <div className="login-error-message">{errorMessage}</div>}
         <input
           type="text"
           id="username"
@@ -72,6 +71,7 @@ const Login = (props) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {errorMessage && <div className="login-error-message">{errorMessage}</div>}
         <button className="login-navlink1" onClick={handleLogin}>
           <img
             alt="confirmbuttonI532"
