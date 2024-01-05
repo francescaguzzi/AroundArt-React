@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import './login.css'
 import { useAuth } from '../auth-context'
+import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
 
@@ -13,6 +14,7 @@ const Login = (props) => {
   const [errorMessage, setErrorMessage] = useState('');
   
   const { login, users } = useAuth();
+  const history = useHistory();
 
   const handleLogin = () => {
     
@@ -21,6 +23,8 @@ const Login = (props) => {
     if (user) {
       login(username);
       console.log('login avvenuto con successo');
+      history.push('/navigazione-mappa'); // naviga verso la pagina di destinazione
+
     } else {
       console.log('username o password errati');
       setErrorMessage('Credenziali non valide. Riprova.');
@@ -68,13 +72,13 @@ const Login = (props) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Link to="/navigazione-mappa" className="login-navlink1" onClick={handleLogin}>
+        <button className="login-navlink1" onClick={handleLogin}>
           <img
             alt="confirmbuttonI532"
             src="/ui-basic/confirmbuttoni532-o9ab.svg"
             className="login-confirmbutton"
           />
-        </Link>
+        </button>
       </div>
     </div>
   )
