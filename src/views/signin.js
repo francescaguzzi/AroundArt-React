@@ -1,11 +1,28 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet'
-
 import './signin.css'
+import { useAuth } from '../auth-context'
 
 const Signin = (props) => {
+
+  // utilizza lo stato per memorizzare i valori dei campi di input
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [privacy, setPrivacy] = useState(false);
+  const [newsletter, setNewsletter] = useState(false);
+
+  const { register } = useAuth();
+
+  const handleRegister = () => {
+    const registrationInfo = { username, password, email, privacy, newsletter };
+    register(registrationInfo);
+
+    console.log('registrazione avvenuta con successo');
+  };
+
   return (
     <div className="signin-container">
       <Helmet>
@@ -32,14 +49,8 @@ const Signin = (props) => {
           required
           placeholder="Username"
           className="signin-username input"
-        />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="Password"
-          className="signin-password input"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="email"
@@ -48,6 +59,18 @@ const Signin = (props) => {
           required
           placeholder="E-mail"
           className="signin-email input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Password"
+          className="signin-password input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <div className="signin-privacyy">
           <span className="signin-privacy">
@@ -67,6 +90,8 @@ const Signin = (props) => {
             id="privacy"
             required
             className="signin-check1"
+            checked={privacy}
+            onChange={(e) => setPrivacy(e.target.checked)}
           />
         </div>
         <div className="signin-newsletter">
@@ -77,9 +102,15 @@ const Signin = (props) => {
             </span>
             <br></br>
           </span>
-          <input type="checkbox" id="newsletter" className="signin-check2" />
+          <input 
+            type="checkbox" 
+            id="newsletter" 
+            className="signin-check2" 
+            checked={newsletter}
+            onChange={(e) => setNewsletter(e.target.checked)}
+          />
         </div>
-        <Link to="/login" className="signin-navlink1">
+        <Link to="/login" className="signin-navlink1" onClick={handleRegister}>
           <img
             alt="confirmbuttonI532"
             src="/ui-basic/confirmbuttoni532-o9ab.svg"

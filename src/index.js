@@ -21,9 +21,12 @@ import Login from './views/login'
 import Signin from './views/signin'
 import NotFound from './views/not-found'
 
+import { AuthProvider } from './auth-context'
+
 const App = () => {
   return (
     <Router>
+      <AuthProvider>
       <Switch>
         <Route component={GestionePreferiti} exact path="/gestione-preferiti" />
         <Route component={GestioneUtente} exact path="/gestione-utente" />
@@ -47,6 +50,7 @@ const App = () => {
         <Route component={NotFound} path="**" />
         <Redirect to="**" />
       </Switch>
+      </AuthProvider>
     </Router>
   )
 }
