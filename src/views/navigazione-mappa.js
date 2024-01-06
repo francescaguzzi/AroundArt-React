@@ -39,7 +39,7 @@ const NavigazioneMappa = (props) => {
         initialViewState={{
           latitude: 44.4949, // Latitudine di Bologna
           longitude: 11.3426, // Longitudine di Bologna
-          zoom: 13
+          zoom: 11
         }}
         style={{with: '100%', height: '100vh'}}
         mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
