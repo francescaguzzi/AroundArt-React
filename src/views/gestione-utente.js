@@ -5,9 +5,13 @@ import { Helmet } from 'react-helmet'
 import MainMenu from '../components/main-menu'
 import EliminaProfiloPopup from '../components/elimina-profilo-popup'
 import ModificaProfiloPopup from '../components/modifica-profilo-popup'
+import { useAuth } from '../auth-context'
 import './gestione-utente.css'
 
+
 const GestioneUtente = (props) => {
+  const { getRegistrationInfo } = useAuth();
+  const { username, email } = getRegistrationInfo();
   return (
     <div className="gestione-utente-container">
       <Helmet>
@@ -21,10 +25,10 @@ const GestioneUtente = (props) => {
           className="gestione-utente-vector"
         />
         <span id="username" className="gestione-utente-text">
-          <span>Username</span>
+          <span>{username}</span>
         </span>
         <span className="gestione-utente-text2">
-          <span>indirizzoesempio@mail.com</span>
+          <span>{email}</span>
         </span>
         <button type="button" className="gestione-utente-modificabutton button">
           <span className="gestione-utente-text4">
