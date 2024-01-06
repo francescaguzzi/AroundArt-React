@@ -7,6 +7,14 @@ import './visualizza-itinerario.css'
 
 const VisualizzaItinerario = (props) => {
   const [schermataAttiva, setSchermataAttiva] = useState(0)
+  const listFavorites = [
+    {artista: "Exit Enter", image_src: "/opere/exit_via-belle-arti-%232_0-200h.jpg", indirizzo: "Via delle Belle Arti"},
+    {artista: "EricaIlCane", image_src: "/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg", indirizzo: "via Mascarella 26A, libreria Moda Infoshop"},
+    {artista: "500 Anni dalla Conquista dell'America", image_src: "/opere/gutierrez_zamboni3-200h.png", indirizzo: "Via Zamboni 38"}
+  ]
+  const [list, setList] = useState(listFavorites);
+
+  
   return (
     <div className={`visualizza-itinerario-container ${props.rootClassName} `}>
       <h1 id="titolo" className="visualizza-itinerario-titolo">
@@ -22,6 +30,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-modifica button"
+              onClick={() => setSchermataAttiva(1)}
             >
               Modifica
             </button>
@@ -37,31 +46,24 @@ const VisualizzaItinerario = (props) => {
       {schermataAttiva === 1 && (
         <div className="visualizza-itinerario-schermo2">
           <div className="visualizza-itinerario-container1">
+          {list.map((item, index) => (
             <OperaLista
-              artista="Exit Enter"
-              image_src="/opere/exit_via-belle-arti-%232_0-200h.jpg"
-              indirizzo="Via delle Belle Arti"
-              rootClassName="opera-lista-root-class-name2"
-              className=""
+              key={index}
+              index={index}
+              artista={item.artista}
+              image_src={item.image_src}
+              indirizzo={item.indirizzo}
+              titolo={item.titolo}
+              list={list}
+              setList={setList}
             ></OperaLista>
-            <OperaLista
-              artista="EricaIlCane"
-              image_src="/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg"
-              indirizzo="via Mascarella 26A, libreria Moda Infoshop"
-              className=""
-            ></OperaLista>
-            <OperaLista
-              titolo="500 Anni dalla Conquista dell'America"
-              artista="Luis Gutierrez"
-              image_src="/opere/gutierrez_zamboni3-200h.png"
-              indirizzo="Via Zamboni 38"
-              className=""
-            ></OperaLista>
+          ))}
           </div>
           <img
             alt={props.confirmbutton_alt}
             src={props.confirmbutton_src}
             className="visualizza-itinerario-confirmbutton"
+            onClick={() => setSchermataAttiva(0)}
           />
         </div>
       )}
