@@ -7,26 +7,7 @@ import MainMenu from '../components/main-menu'
 import VisualizzaOpera from '../components/visualizza-opera'
 import './navigazione-mappa.css'
 
-// prep for leaflet
-
-<>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin="">
-  </script>
-</>
-
 const NavigazioneMappa = (props) => {
-
-  // setup mappa
-  // coordinate Bologna 44.4949, 11.3426
-  var map = L.map('map').setView([44.4949, 11.3426], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-  }).addTo(map);
 
   return (
     <div className="navigazione-mappa-container">
@@ -50,8 +31,14 @@ const NavigazioneMappa = (props) => {
         rootClassName="visualizza-opera-root-class-name"
       ></VisualizzaOpera>
 
-      <div id="map">
-      </div>
+      <div id='map'></div>
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
+        var map = new mapboxgl.Map(
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11'
+        );
+      </script>
 
     </div>
   )
