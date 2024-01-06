@@ -1,25 +1,31 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import ReactMapGL from 'react-map-gl';
+import Map, {NavigationControl, Marker} from 'react-map-gl';
+import maplibregl from 'maplibre-gl';
 import SearchBar from '../components/search-bar';
 import MainMenu from '../components/main-menu';
 import VisualizzaOpera from '../components/visualizza-opera';
 import './navigazione-mappa.css';
 
-function InteractiveMap() {
-  const [viewport, setViewport] = useState({
-    width: '100%',
-    height: 'calc(100vh - 60px)',
-    latitude: 44.4949, // Latitudine di Bologna
-    longitude: 11.3426, // Longitudine di Bologna
-    zoom: 13,
-  });
+// function InteractiveMap() {
+//   const [viewport, setViewport] = useState({
+//     latitude: 44.4949, // Latitudine di Bologna
+//     longitude: 11.3426, // Longitudine di Bologna
+//   });
 
-  return <ReactMapGL {...viewport} onViewportChange={setViewport} mapboxAccessToken={"pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg"} />;
-}
+//   return <Map {...viewport} style={{
+//     position: 'absolute',
+//     top: 0,
+//     left: 0,
+//     right: 0,
+//     bottom: 0
+//   }} 
+//   mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
+//   />;
+// }
 
 const NavigazioneMappa = (props) => {
-  
+
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -29,6 +35,19 @@ const NavigazioneMappa = (props) => {
           content="NavigazioneMappa - exported project"
         />
       </Helmet>
+      <Map mapLib={maplibregl}
+        initialViewState={{
+          latitude: 44.4949, // Latitudine di Bologna
+          longitude: 11.3426, // Longitudine di Bologna
+          zoom: 13
+        }}
+        style={{with: '100%', height: '100vh'}}
+        mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
+      >
+          <NavigationControl position="top-right"></NavigationControl>
+          <Marker latitude={44.4971085} longitude={11.3516271}/>
+      </Map>
+
       <SearchBar rootClassName="search-bar-root-class-name" />
       <MainMenu rootClassName="main-menu-root-class-name" />
       <VisualizzaOpera
@@ -41,7 +60,7 @@ const NavigazioneMappa = (props) => {
         image1_src1="/opere/gutierrez_zamboni3-200h.png"
         rootClassName="visualizza-opera-root-class-name"
       />
-      <InteractiveMap />
+     
     </div>
   );
 };
