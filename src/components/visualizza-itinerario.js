@@ -37,6 +37,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-elimina button"
+              onClick={() => {setSchermataAttiva(2)}}
             >
               Elimina
             </button>
@@ -76,6 +77,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-annulla button"
+              onClick={() => setSchermataAttiva(0)}
             >
               <span className="visualizza-itinerario-text1">
                 {props.text21}
@@ -84,6 +86,8 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-confermaelimina button"
+              onClick={() => {props.itineraryVisible(false); props.deleteItinerario()}}
+
             >
               <span className="visualizza-itinerario-text2">{props.text2}</span>
             </button>
