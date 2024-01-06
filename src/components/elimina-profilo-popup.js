@@ -3,12 +3,19 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import './elimina-profilo-popup.css'
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../auth-context'
 
 const EliminaProfiloPopup = (props) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [deleteOk, setDeleteOk] = useState(false)
+  const history = useHistory();
+  const { getRegistrationInfo, deleteUser } = useAuth();
+  const { username } = getRegistrationInfo();
+
   return (
-    <div className={`elimina-profilo-popup-container ${props.rootClassName} `}>
+    <div className={`elimina-profilo-popup-container ${props.rootClassName} `}
+    style={
+      props.isEliminaVisible ? { display: 'block' } : { display: 'none' }
+    }>
       <form
         name="modifica-form"
         enctype="text/plain"
@@ -18,8 +25,9 @@ const EliminaProfiloPopup = (props) => {
         <button
           type="button"
           onClick={() => {
-            setIsVisible(false)
-            setDeleteOk(true)
+            props.setIsEliminaVisible(false)
+            history.push('/')
+            deleteUser(username);
           }}
           className="elimina-profilo-popup-confermaelimina button"
         >
@@ -27,7 +35,7 @@ const EliminaProfiloPopup = (props) => {
         </button>
         <button
           type="button"
-          onClick={() => setIsVisible(false)}
+          onClick={() => props.setIsEliminaVisible(false)}
           className="elimina-profilo-popup-annulla button"
         >
           <span className="elimina-profilo-popup-text2">{props.text21}</span>

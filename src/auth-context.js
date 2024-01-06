@@ -25,11 +25,40 @@ export const AuthProvider = ({ children }) => {
   };
 
   const getRegistrationInfo = () => {
+    return users[0];
     return users.find((user) => user.username === username);
   };
 
+  const updateRegistrationInfo = (oldUsername, username, email, password) => {
+    console.log(oldUsername, username, email, password);
+    setUsers(users.map((user) => {
+      if (user.username === oldUsername) {
+        console.log("ciao");
+        let aaa = {
+          ...user,
+          username: username,
+          email: email,
+          password: password
+        };
+
+        console.table(aaa);
+        return aaa;
+      }
+      return user;
+    }));
+
+    setUsername(username);
+
+    console.log(users);
+    console.log(username);
+  };
+
+  const deleteUser = (username) => {
+    setUsers(users.filter((user) => user.username !== username));
+  };
+
   return (
-    <AuthContext.Provider value={{ authenticated, username, users, login, logout, register, getRegistrationInfo }}>
+    <AuthContext.Provider value={{ authenticated, username, users, login, logout, register, getRegistrationInfo , updateRegistrationInfo, deleteUser}}>
       {children}
     </AuthContext.Provider>
   );

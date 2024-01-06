@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import { Helmet } from 'react-helmet'
 
@@ -12,6 +12,9 @@ import './gestione-utente.css'
 const GestioneUtente = (props) => {
   const { getRegistrationInfo } = useAuth();
   const { username, email } = getRegistrationInfo();
+  const [isModificaVisible, setIsModificaVisible] = useState(false);
+  const [isEliminaVisible, setIsEliminaVisible] = useState(false);
+
   return (
     <div className="gestione-utente-container">
       <Helmet>
@@ -24,24 +27,24 @@ const GestioneUtente = (props) => {
           src="/external/vector1719-71kh.svg"
           className="gestione-utente-vector"
         />
-        <span id="username" className="gestione-utente-text">
+        <span className="gestione-utente-text">
           <span>{username}</span>
         </span>
         <span className="gestione-utente-text2">
           <span>{email}</span>
         </span>
-        <button type="button" className="gestione-utente-modificabutton button">
+        <button type="button" className="gestione-utente-modificabutton button" onClick={() => {setIsModificaVisible(true)}}>
           <span className="gestione-utente-text4">
             <span>Modifica profilo</span>
           </span>
         </button>
-        <button type="button" className="gestione-utente-eliminabutton button">
+        <button type="button" className="gestione-utente-eliminabutton button" onClick={() => {setIsEliminaVisible(true)}}>
           <span className="gestione-utente-text6">Elimina profilo</span>
         </button>
       </div>
       <MainMenu rootClassName="main-menu-root-class-name"></MainMenu>
-      <EliminaProfiloPopup rootClassName="elimina-profilo-popup-root-class-name"></EliminaProfiloPopup>
-      <ModificaProfiloPopup rootClassName="modifica-profilo-popup-root-class-name"></ModificaProfiloPopup>
+      <EliminaProfiloPopup rootClassName="elimina-profilo-popup-root-class-name" isEliminaVisible = {isEliminaVisible} setIsEliminaVisible = {setIsEliminaVisible}></EliminaProfiloPopup>
+      <ModificaProfiloPopup rootClassName="modifica-profilo-popup-root-class-name" isModificaVisible = {isModificaVisible} setIsModificaVisible = {setIsModificaVisible}></ModificaProfiloPopup>
     </div>
   )
 }
