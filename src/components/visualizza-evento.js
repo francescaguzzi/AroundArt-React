@@ -6,6 +6,7 @@ import './visualizza-evento.css'
 
 const VisualizzaEvento = (props) => {
   const [schedaAttiva, setSchedaAttiva] = useState(0)
+
   return (
     <div className={`visualizza-evento-container ${props.rootClassName} `}>
       <div className="visualizza-evento-scheda-opera">
@@ -21,10 +22,10 @@ const VisualizzaEvento = (props) => {
         <span id="descrizione" className="visualizza-evento-descrizione">
           {props.descrizione}
         </span>
-        <svg viewBox="0 0 1024 1024" className="visualizza-evento-icon">
+        <svg viewBox="0 0 1024 1024" className="visualizza-evento-icon" onClick={() => props.eventsVisible('')}>
           <path
             d="M768 469.333h-309.077l67.669-67.669c33.323-33.323 33.323-87.424 0-120.661-33.323-33.323-87.339-33.323-120.661 0l-273.664 273.664 273.664 273.664c16.64 16.683 38.485 25.003 60.331 25.003s43.648-8.32 60.331-25.003c33.323-33.323 33.323-87.424 0-120.661l-67.669-67.669h309.077c47.104 0 85.333-38.229 85.333-85.333 0-47.147-38.229-85.333-85.333-85.333z"
-            className=""
+            className="" 
           ></path>
         </svg>
       </div>

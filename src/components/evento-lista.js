@@ -6,7 +6,7 @@ import './evento-lista.css'
 
 const EventoLista = (props) => {
   return (
-    <div className={`evento-lista-container ${props.rootClassName} `}>
+    <div className={`evento-lista-container ${props.rootClassName} `} onClick={() => props.eventsVisible(props.titolo)}>
       <div className="evento-lista-container1">
         <h1 id="titolo" className="evento-lista-titolo">
           {props.titolo}
