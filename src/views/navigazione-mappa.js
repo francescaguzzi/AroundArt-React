@@ -20,6 +20,14 @@ import './navigazione-mappa.css'
 </>
 
 const NavigazioneMappa = (props) => {
+
+  // setup mappa
+  // coordinate Bologna 44.4949, 11.3426
+  var map = L.map('map').setView([44.4949, 11.3426], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -42,16 +50,7 @@ const NavigazioneMappa = (props) => {
         rootClassName="visualizza-opera-root-class-name"
       ></VisualizzaOpera>
 
-      <div className="map-container">
-        <MapContainer
-          center={[44.4949, 11.3426]} // Coordinate di Bologna
-          zoom={13}
-          style={{ height: 'calc(100vh - 60px)', width: '100%', position: 'absolute', top: '60px', zIndex: 0 }}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-        </MapContainer>
+      <div id="map">
       </div>
 
     </div>
