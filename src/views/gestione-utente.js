@@ -39,7 +39,7 @@ const GestioneUtente = (props) => {
           <span className="gestione-utente-text6">Elimina profilo</span>
         </button>
       </div>
-      <MainMenu rootClassName="main-menu-root-class-name1"></MainMenu>
+      <MainMenu rootClassName="main-menu-root-class-name"></MainMenu>
       <EliminaProfiloPopup rootClassName="elimina-profilo-popup-root-class-name"></EliminaProfiloPopup>
       <ModificaProfiloPopup rootClassName="modifica-profilo-popup-root-class-name"></ModificaProfiloPopup>
     </div>

@@ -1,5 +1,5 @@
 .visualizza-itinerario-container {
-  width: 444px;
+  width: 380px;
   height: 653px;
   display: flex;
   position: relative;
@@ -161,11 +161,10 @@
   text-decoration: none;
 }
 .visualizza-itinerario-root-class-name {
-  top: 0px;
+  top: 40px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  margin: auto;
   position: absolute;
   align-self: center;
 }

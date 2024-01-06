@@ -13,4 +13,6 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  position: absolute;
+  top: 40px;
 }
