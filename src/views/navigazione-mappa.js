@@ -15,7 +15,7 @@ function InteractiveMap() {
     zoom: 13,
   });
 
-  return <ReactMapGL {...viewport} onViewportChange={setViewport} mapboxApiAccessToken={pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg} />;
+  return <ReactMapGL {...viewport} onViewportChange={setViewport} mapboxApiAccessToken={'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg'} />;
 }
 
 const NavigazioneMappa = (props) => {
