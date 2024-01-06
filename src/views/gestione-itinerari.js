@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { Helmet } from 'react-helmet'
+import React, { useState } from 'react'
 
 import ItinerarioLista from '../components/itinerario-lista'
 import VisualizzaItinerario from '../components/visualizza-itinerario'
@@ -8,6 +7,7 @@ import MainMenu from '../components/main-menu'
 import './gestione-itinerari.css'
 
 const GestioneItinerari = (props) => {
+  const [itineraryVisible, setItineraryVisible] = useState('');
   return (
     <div className="gestione-itinerari-container">
       <Helmet>
@@ -21,6 +21,7 @@ const GestioneItinerari = (props) => {
         <ItinerarioLista
           titolo="Itinerario 1"
           rootClassName="itinerario-lista-root-class-name"
+          itineraryVisible = {setItineraryVisible}
         ></ItinerarioLista>
         <ItinerarioLista
           titolo="Itinerario 2"
@@ -31,10 +32,10 @@ const GestioneItinerari = (props) => {
           rootClassName="itinerario-lista-root-class-name2"
         ></ItinerarioLista>
       </div>
-      <VisualizzaItinerario
+      {itineraryVisible === 'Itinerario 1' && (<VisualizzaItinerario
         titolo="Itinerario 1"
         rootClassName="visualizza-itinerario-root-class-name"
-      ></VisualizzaItinerario>
+      ></VisualizzaItinerario>)}
       <MainMenu rootClassName="main-menu-root-class-name2"></MainMenu>
     </div>
   )

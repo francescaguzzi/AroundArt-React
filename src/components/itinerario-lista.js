@@ -6,7 +6,7 @@ import './itinerario-lista.css'
 
 const ItinerarioLista = (props) => {
   return (
-    <div className={`itinerario-lista-container ${props.rootClassName} `}>
+    <div className={`itinerario-lista-container ${props.rootClassName} `} onClick = {() => props.itineraryVisible(props.titolo)}>
       <h1 id="titolo" className="itinerario-lista-titolo">
         {props.titolo}
       </h1>
