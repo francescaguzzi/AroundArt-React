@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import MapGL from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css'; // Importa i fogli di stile di Mapbox-GL
+import ReactMapGL from 'react-map-gl';
 import SearchBar from '../components/search-bar';
 import MainMenu from '../components/main-menu';
 import VisualizzaOpera from '../components/visualizza-opera';
 import './navigazione-mappa.css';
 
-const NavigazioneMappa = (props) => {
+function InteractiveMap() {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: 'calc(100vh - 60px)',
@@ -16,31 +15,11 @@ const NavigazioneMappa = (props) => {
     zoom: 13,
   });
 
-  const mapContainerRef = useRef(null);
+  return <ReactMapGL {...viewport} onViewportChange={setViewport} mapboxApiAccessToken={pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg} />;
+}
 
-  useEffect(() => {
-    const mapboxgl = require('mapbox-gl');
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
-
-    const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [viewport.longitude, viewport.latitude],
-      zoom: viewport.zoom,
-    });
-
-    map.on('move', () => {
-      const { lng, lat } = map.getCenter();
-      setViewport((prevViewport) => ({
-        ...prevViewport,
-        longitude: lng,
-        latitude: lat,
-      }));
-    });
-
-    return () => map.remove();
-  }, [viewport]);
-
+const NavigazioneMappa = (props) => {
+  
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -62,16 +41,7 @@ const NavigazioneMappa = (props) => {
         image1_src1="/opere/gutierrez_zamboni3-200h.png"
         rootClassName="visualizza-opera-root-class-name"
       />
-      <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }}></div>
-      <MapGL
-        {...viewport}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
-        mapboxApiAccessToken={mapboxgl.accessToken}
-        width="100%"
-        height="calc(100vh - 60px)"
-      >
-        {/* Aggiungi eventuali Marker o Layer qui */}
-      </MapGL>
+      <InteractiveMap />
     </div>
   );
 };
