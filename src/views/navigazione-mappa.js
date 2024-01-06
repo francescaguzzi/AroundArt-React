@@ -7,6 +7,18 @@ import MainMenu from '../components/main-menu'
 import VisualizzaOpera from '../components/visualizza-opera'
 import './navigazione-mappa.css'
 
+// prep for leaflet
+
+<>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin="">
+  </script>
+</>
+
 const NavigazioneMappa = (props) => {
   return (
     <div className="navigazione-mappa-container">
@@ -17,10 +29,6 @@ const NavigazioneMappa = (props) => {
           content="NavigazioneMappa - exported project"
         />
       </Helmet>
-      <iframe
-        src="https://www.google.com/maps/d/u/0/embed?mid=1ctIRrSf7MX488x6zcixQ5RZs_8jiUBM&amp;ehbc=2E312F&amp;noprof=1"
-        className="navigazione-mappa-iframe"
-      ></iframe>
       <SearchBar rootClassName="search-bar-root-class-name"></SearchBar>
       <MainMenu rootClassName="main-menu-root-class-name"></MainMenu>
       <VisualizzaOpera
@@ -33,6 +41,19 @@ const NavigazioneMappa = (props) => {
         image1_src1="/opere/gutierrez_zamboni3-200h.png"
         rootClassName="visualizza-opera-root-class-name"
       ></VisualizzaOpera>
+
+      <div className="map-container">
+        <MapContainer
+          center={[44.4949, 11.3426]} // Coordinate di Bologna
+          zoom={13}
+          style={{ height: 'calc(100vh - 60px)', width: '100%', position: 'absolute', top: '60px', zIndex: 0 }}
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        </MapContainer>
+      </div>
+
     </div>
   )
 }
