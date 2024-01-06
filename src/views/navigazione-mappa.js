@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ReactMapGL from 'react-map-gl';
 import SearchBar from '../components/search-bar';
