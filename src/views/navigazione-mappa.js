@@ -1,52 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import MapGL, { Marker } from 'react-map-gl';
+import MapGL from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css'; // Importa i fogli di stile di Mapbox-GL
 import SearchBar from '../components/search-bar';
 import MainMenu from '../components/main-menu';
 import VisualizzaOpera from '../components/visualizza-opera';
-import 'mapbox-gl/dist/mapbox-gl.css'; // Importa i fogli di stile di Mapbox-GL
 import './navigazione-mappa.css';
 
-const NavigazioneMappa = (props) => {
-  const [mapLoaded, setMapLoaded] = useState(false);
+const MapContainer = () => {
+  const [map, setMap] = useState(null);
 
   useEffect(() => {
-    const loadMap = async () => {
+    const initializeMap = () => {
       const mapboxgl = require('mapbox-gl');
       mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
 
-      const map = new mapboxgl.Map({
+      const newMap = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [11.3426, 44.4949], // Longitudine e latitudine di Bologna
         zoom: 13,
       });
 
-      map.on('load', () => {
-        setMapLoaded(true);
-      });
-
-      map.on('move', () => {
-        const { lng, lat } = map.getCenter();
-        setViewport((prevViewport) => ({
-          ...prevViewport,
-          longitude: lng,
-          latitude: lat,
-        }));
-      });
+      setMap(newMap);
     };
 
-    loadMap();
-  }, []);
+    if (!map) {
+      initializeMap();
+    }
 
-  const [viewport, setViewport] = useState({
-    width: '100%',
-    height: 'calc(100vh - 60px)',
-    latitude: 44.4949, // Latitudine di Bologna
-    longitude: 11.3426, // Longitudine di Bologna
-    zoom: 13,
-  });
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
+  }, [map]);
 
+  return <div id="map" style={{ height: '100%', width: '100%' }} />;
+};
+
+const NavigazioneMappa = (props) => {
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -68,17 +61,7 @@ const NavigazioneMappa = (props) => {
         image1_src1="/opere/gutierrez_zamboni3-200h.png"
         rootClassName="visualizza-opera-root-class-name"
       />
-      {mapLoaded && (
-        <MapGL
-          {...viewport}
-          mapStyle="mapbox://styles/mapbox/streets-v11"
-          mapboxApiAccessToken={mapboxgl.accessToken}
-          width="100%"
-          height="calc(100vh - 60px)"
-        >
-          {/* Aggiungi eventuali Marker o Layer qui */}
-        </MapGL>
-      )}
+      <MapContainer />
     </div>
   );
 };
