@@ -1,5 +1,5 @@
 .opera-lista-container {
-  width: 397px;
+  width: 375px;
   display: flex;
   position: relative;
   border-color: #E8E8E8;
@@ -20,7 +20,7 @@
 }
 .opera-lista-container1 {
   flex: 0 0 auto;
-  width: auto;
+  width: 228px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -83,6 +83,7 @@
   height: 40px;
   align-self: center;
   margin-right: var(--dl-space-space-halfunit);
+  cursor: pointer;
 }
 
 
