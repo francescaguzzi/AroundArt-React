@@ -12,10 +12,10 @@ const NavigazioneMappa = (props) => {
   var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
-  var map = new mapboxgl.Map({
+  /* var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
-  });
+  }); */
 
 
   return (
@@ -41,6 +41,13 @@ const NavigazioneMappa = (props) => {
       ></VisualizzaOpera>
 
       <div id='map'></div>
+
+      <script>
+        var map = new mapboxgl.Map(
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11'
+        );
+      </script>
 
     </div>
   )
