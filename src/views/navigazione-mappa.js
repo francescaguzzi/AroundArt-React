@@ -9,13 +9,22 @@ import './navigazione-mappa.css'
 
 const NavigazioneMappa = (props) => {
 
-  var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+  
+  useEffect(() => {
+    var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbmNlc2NhZ3V6emkiLCJhIjoiY2xyMmYyZGoyMHVieDJrdGFkdW92bjM0dSJ9.RTjIHnc-eOv5c1fe3_xmAg';
-  /* var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-  }); */
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+
+    // Aggiungi altri personalizzazioni della mappa qui se necessario
+
+    // Cleanup: distruggi la mappa quando il componente viene smontato
+    return () => map.remove();
+  }, []); // La dipendenza vuota indica che useEffect deve essere eseguito solo una volta al montaggio
+
 
 
   return (
@@ -41,13 +50,6 @@ const NavigazioneMappa = (props) => {
       ></VisualizzaOpera>
 
       <div id='map'></div>
-
-      <script>
-        var map = new mapboxgl.Map(
-          container: 'map',
-          style: 'mapbox://styles/mapbox/streets-v11'
-        );
-      </script>
 
     </div>
   )
