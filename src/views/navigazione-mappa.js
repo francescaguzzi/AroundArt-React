@@ -31,6 +31,18 @@ const NavigazioneMappa = (props) => {
   const [selectedOpera, setSelectedOpera] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // x rendering di colori diversi per ogni categoria
+  const getCategoryColor = (category) => {
+    switch (category) {
+      case 'GRAFFITI':
+        return '#25CED1';
+      case 'POSTER':
+        return '#EA526F';
+      default:
+        return '#FF8A5B';
+    }
+  };  
+
   const opereMarkers = useMemo(() => 
     
     opere.filter((opera) => 
@@ -44,6 +56,8 @@ const NavigazioneMappa = (props) => {
           latitude={opera.latitude}
           longitude={opera.longitude}
 
+          color={getCategoryColor(opera.categoria)}
+          
           onClick={e => {
             e.originalEvent.stopPropagation();
             setSelectedOpera(opera);
