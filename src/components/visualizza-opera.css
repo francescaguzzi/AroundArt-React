@@ -29,6 +29,13 @@
   z-index: 1;
   border-radius: 25px;
 }
+.visualizza-opera-artista {
+  color: rgba(92, 92, 92, 1);
+  align-self: flex-start;
+  font-style: normal;
+  margin-top: var(--dl-space-space-unit);
+  font-weight: 400;
+}
 .visualizza-opera-titolo {
   color: rgba(92, 92, 92, 1);
   align-self: flex-start;

@@ -6,7 +6,9 @@ import Recensione from './recensione'
 import './visualizza-opera.css'
 
 const VisualizzaOpera = (props) => {
+
   const [schedaAttiva, setSchedaAttiva] = useState(0)
+
   return (
     <div className={`visualizza-opera-container ${props.rootClassName} `}>
       {schedaAttiva === 0 && (
@@ -19,6 +21,9 @@ const VisualizzaOpera = (props) => {
           <h4 id="titolo" className="visualizza-opera-titolo">
             {props.titolo}
           </h4>
+          <span id="artista" className="visualizza-opera-artista">
+            {props.artista}
+          </span>
           <span id="indirizzo" className="visualizza-opera-indirizzo">
             {props.indirizzo}
           </span>
@@ -154,6 +159,7 @@ VisualizzaOpera.defaultProps = {
   image1_alt1: 'image15331',
   button: 'Button',
   titolo: 'Titolo',
+  artista: 'Artista',
   descrizione: 'Descrizione lorem ipsum bimbumbim',
   indirizzo1: 'Indirizzo',
   indirizzo: 'Indirizzo',
@@ -176,6 +182,7 @@ VisualizzaOpera.propTypes = {
   image1_alt1: PropTypes.string,
   button: PropTypes.string,
   titolo: PropTypes.string,
+  artista: PropTypes.string,
   descrizione: PropTypes.string,
   indirizzo1: PropTypes.string,
   indirizzo: PropTypes.string,

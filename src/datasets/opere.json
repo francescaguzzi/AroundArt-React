@@ -1,0 +1,75 @@
+
+[
+    {
+        "latitude": 44.496832,
+        "longitude": 11.351915,
+        "titolo": "500 anni dalla Conquista dell'America",
+        "artista": "Luis Gutierrez",
+        "categoria": "MURALE",
+        "data": "1988",
+        "indirizzo": "Via Zamboni 38",
+        "descrizione": "Un’opera antologica per il suo carattere multietnico e per il messaggio di pace e fraternità tra i popoli.",
+        "immagine": "https://assets.culturabologna.it/f009162f-f640-41a1-8b0b-f023fe2548c2-gutierrezmuralelettere-01.jpg/658e92357ddaf83a37526e47323880e7e339b4c0.jpg"
+    },
+
+    {
+        "latitude": 44.492366,
+        "longitude": 11.348054,
+        "titolo": "Blu's Mural",
+        "artista": "Blu",
+        "categoria": "MURALE",
+        "data": "2008",
+        "indirizzo": "Via del Porto, 21",
+        "descrizione": "Blu è uno street artist di fama internazionale. Il suo murale a Bologna, realizzato nel 2008, è un'icona nella zona del Porto.",
+        "immagine": "https://www.artribune.com/wp-content/uploads/2016/03/Il-murale-di-BLu-per-il-cso-xm24-a-bologna-2048x1371.jpg"
+    },
+
+    {
+    "latitude": 44.494717,
+    "longitude": 11.347187,
+    "titolo": "RECLAIM POETRY",
+    "artista": "Cheap",
+    "categoria": "POSTER",
+    "data": "8 dicembre 2023",
+    "indirizzo": "Via dell'Independenza, 42",
+    "descrizione": "Con questa campagna, CHEAP e Patto per la lettura intendono esplicitare la funzione sociale della poesia, connotare la lettura come esperienza collettiva.",
+    "immagine": "https://www.cheapfestival.it/wp-content/uploads/2023/12/Cheap-Reclaim-Poetry_02-72-copia-1030x686.jpg"
+    },
+
+    {
+    "latitude": 44.492654,
+    "longitude": 11.353824,
+    "titolo": "Zoo in Fuga",
+    "artista": "Ericailcane",
+    "categoria": "MURALE",
+    "data": "2008",
+    "indirizzo": "Via del Pratello, 67",
+    "descrizione": "Lo street artist italiano Ericailcane ha creato questa opera nel 2008, ritraendo un 'zoo in fuga' sulla facciata di un edificio.",
+    "immagine": "https://cdn.zero.eu/uploads/2020/07/ericalcane3.jpg"
+    },
+
+    {
+    "latitude": 44.493815,
+    "longitude": 11.349550,
+    "titolo": "Dolce Vita",
+    "artista": "Lucamaleonte",
+    "categoria": "MURALE",
+    "data": "2015",
+    "indirizzo": "Via Clavature, 18",
+    "descrizione": "L'opera 'Dolce Vita' di Lucamaleonte celebra l'iconica scena del film di Federico Fellini. Realizzata nel 2015, è un tributo alla dolce vita italiana.",
+    "immagine": "https://c8.alamy.com/compit/wa9nbn/san-giuliano-a-mare-di-rimini-famosa-per-il-suo-fellini-ispirato-graffiti-wa9nbn.jpg"
+    },
+
+    {
+    "latitude": 44.495891,
+    "longitude": 11.349249,
+    "titolo": "L'Arte è Rivoluzione",
+    "artista": "Btoy",
+    "categoria": "GRAFFITI",
+    "data": "2019",
+    "indirizzo": "Via Pescherie Vecchie, 14",
+    "descrizione": "L'opera 'L'Arte è Rivoluzione' di Btoy, realizzata nel 2019, riflette sull'importanza dell'arte come strumento di cambiamento e rivoluzione.",
+    "immagine": "https://i.pinimg.com/474x/d5/61/3d/d5613d5e587c281762b78187bbaac58a.jpg"
+    }
+
+]

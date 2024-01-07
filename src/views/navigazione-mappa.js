@@ -7,6 +7,8 @@ import MainMenu from '../components/main-menu';
 import VisualizzaOpera from '../components/visualizza-opera';
 import './navigazione-mappa.css';
 
+import opere from '../datasets/opere.json';
+
 // function InteractiveMap() {
 //   const [viewport, setViewport] = useState({
 //     latitude: 44.4949, // Latitudine di Bologna
@@ -26,6 +28,8 @@ import './navigazione-mappa.css';
 
 const NavigazioneMappa = (props) => {
 
+  const [selectedOpera, setSelectedOpera] = useState(null);
+
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -35,31 +39,45 @@ const NavigazioneMappa = (props) => {
           content="NavigazioneMappa - exported project"
         />
       </Helmet>
+
+      <SearchBar rootClassName="search-bar-root-class-name" />
+
       <Map mapLib={maplibregl}
         initialViewState={{
           latitude: 44.4949, // Latitudine di Bologna
           longitude: 11.3426, // Longitudine di Bologna
           zoom: 11
         }}
-        style={{with: '100%', height: '100vh'}}
+        style={{width: '100%', height: '100vh'}}
         mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
       >
           <NavigationControl position="top-right"></NavigationControl>
-          <Marker latitude={44.4971085} longitude={11.3516271}/>
+
+          {opere.map((opera, index) => (
+            <Marker 
+              key={index} 
+              latitude={opera.latitudine} 
+              longitude={opera.longitudine}
+              onClick={() => setSelectedOpera(opera)}
+            />
+          ))}
+    
       </Map>
 
-      <SearchBar rootClassName="search-bar-root-class-name" />
       <MainMenu rootClassName="main-menu-root-class-name" />
-      <VisualizzaOpera
-        data="1988"
-        titolo="500 Anni dalla Conquista dell'America"
-        indirizzo="Via Zamboni 38"
-        image1_alt="/opere/gutierrez_zamboni3-200h.png"
-        image1_src="/opere/gutierrez_zamboni3-200h.png"
-        descrizione='Nato in Colombia ma naturalizzato italiano, Luis Gutierrez, definisce Bologna una “seconda casa” ed è, proprio in una delle sue strade più famose, via Zamboni, che realizza il lavoro dal titolo "500 Anni dalla Conquista dell&apos;America", un’opera antologica per il suo carattere multietnico e per il messaggio di pace e fraternità tra i popoli. '
-        image1_src1="/opere/gutierrez_zamboni3-200h.png"
-        rootClassName="visualizza-opera-root-class-name"
-      />
+      
+      {selectedOpera && (
+        <VisualizzaOpera
+          rootClassName="visualizza-opera-root-class-name"
+          image1_alt={selectedOpera.immagine}
+          image1_src={selectedOpera.immagine}
+          titolo={selectedOpera.titolo}
+          artista={selectedOpera.artista}
+          indirizzo={selectedOpera.indirizzo}
+          data={selectedOpera.data}
+          descrizione={selectedOpera.descrizione}
+        />
+      )}
      
     </div>
   );
