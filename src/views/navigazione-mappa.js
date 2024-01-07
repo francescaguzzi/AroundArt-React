@@ -53,7 +53,7 @@ const NavigazioneMappa = (props) => {
       >
           <NavigationControl position="top-right"></NavigationControl>
 
-          {opereData.map((opera, index) => (
+          {opere.map((opera, index) => (
           (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
           typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? (
             <Marker
