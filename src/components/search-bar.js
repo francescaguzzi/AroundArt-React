@@ -5,7 +5,16 @@ import PropTypes from 'prop-types'
 import './search-bar.css'
 
 const SearchBar = (props) => {
-  const [isVisible, setIsVisible] = useState(false)
+
+  const [isVisible, setIsVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearchTerm(searchTerm);
+    props.onSearch(searchTerm);
+  };
+
   return (
     <div className={`search-bar-container ${props.rootClassName} `}>
       <button
@@ -27,7 +36,8 @@ const SearchBar = (props) => {
             type="text"
             id="ricerca"
             placeholder="Cerca opera o categoria..."
-            onSubmit={() => setIsVisible(false)}
+            onChange={handleInputChange}
+            value={searchTerm}
             className="search-bar-textinput input"
           />
           <img
