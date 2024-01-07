@@ -29,12 +29,33 @@ import opere from '../datasets/opere.json';
 const NavigazioneMappa = (props) => {
 
   const [selectedOpera, setSelectedOpera] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const opereMarkers = useMemo(() => 
     
-    opere.map((opera, index) => (
+    opere.filter((opera) => 
       (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
-      typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? (
+       typeof opera.longitude === 'number' && !isNaN(opera.longitude)) &&
+      (opera.titolo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+       opera.artista.toLowerCase().includes(searchTerm.toLowerCase()))
+    ).map((opera, index) => (
+      <Marker
+          key={index}
+          latitude={opera.latitude}
+          longitude={opera.longitude}
+
+          onClick={e => {
+            e.originalEvent.stopPropagation();
+            setSelectedOpera(opera);
+          }}
+      />
+    )), [searchTerm]
+  );
+      
+  /* opere.map((opera, index) => (
+      (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
+      typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? 
+      (
         <Marker
           key={index}
           latitude={opera.latitude}
@@ -46,8 +67,7 @@ const NavigazioneMappa = (props) => {
           }}
         />
       ) : null
-    )), []
-  );
+    )), [] */
   
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -99,7 +119,10 @@ const NavigazioneMappa = (props) => {
 
       </Map>
       
-      <SearchBar rootClassName="search-bar-root-class-name" />
+      <SearchBar 
+        rootClassName="search-bar-root-class-name"
+        onSearch={(term) => setSearchTerm(term)}
+      />
       <MainMenu rootClassName="main-menu-root-class-name" />
       
       {selectedOpera && (
