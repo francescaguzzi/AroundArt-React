@@ -8,6 +8,7 @@ import './visualizza-opera.css'
 const VisualizzaOpera = (props) => {
 
   const [schedaAttiva, setSchedaAttiva] = useState(0)
+  var heartcheck = 0
 
   return (
     <div className={`visualizza-opera-container ${props.rootClassName} `}>
@@ -57,6 +58,16 @@ const VisualizzaOpera = (props) => {
             alt="heartcheckbox5340"
             src="/external/heartcheckbox5340-okuh.svg"
             className="visualizza-opera-heartcheckbox"
+            // al click cambia l'immagine
+            onClick={(e) => {
+              if (heartcheck === 0) {
+              e.target.src = '/external/Property 1=heart-fill.svg'
+              heartcheck = 1
+              } else {
+                e.target.src = '/external/heartcheckbox5340-okuh.svg'
+                heartcheck = 0
+              }
+            }}
           />
         </div>
       )}

@@ -48,7 +48,26 @@ const NavigazioneMappa = (props) => {
       ) : null
     )), []
   );
-      
+  
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      // Verifica se il clic è avvenuto al di fuori del componente VisualizzaOpera
+      if (
+        selectedOpera &&
+        e.target.closest('.visualizza-opera-root-class-name') === null
+      ) {
+        setSelectedOpera(null);
+      }
+    };
+
+    // Aggiungi il gestore di eventi click al documento quando il componente è montato
+    document.addEventListener('click', handleClickOutside);
+
+    // Pulisci il gestore di eventi quando il componente è smontato
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [selectedOpera]);
 
   return (
     <div className="navigazione-mappa-container">
@@ -88,7 +107,7 @@ const NavigazioneMappa = (props) => {
           data={selectedOpera.data}
           descrizione={selectedOpera.descrizione}
 
-          onClose={() => setSelectedOpera(null)}
+          titoloRec={selectedOpera.titolo}
         />
       )}
      
