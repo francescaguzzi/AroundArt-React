@@ -46,8 +46,8 @@ const NavigazioneMappa = (props) => {
           }}
         />
       ) : null
-    ))
-  , []);
+    )), []
+  );
       
 
   return (
