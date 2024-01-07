@@ -53,13 +53,16 @@ const NavigazioneMappa = (props) => {
       >
           <NavigationControl position="top-right"></NavigationControl>
 
-          {opere.map((opera, index) => (
-            <Marker 
-              key={index} 
-              latitude={opera.latitudine} 
-              longitude={opera.longitudine}
+          {opereData.map((opera, index) => (
+          (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
+          typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? (
+            <Marker
+              key={index}
+              latitude={opera.latitude}
+              longitude={opera.longitude}
               onClick={() => setSelectedOpera(opera)}
             />
+          ) : null
           ))}
     
       </Map>
