@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Map, {NavigationControl, Marker} from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
@@ -30,6 +30,26 @@ const NavigazioneMappa = (props) => {
 
   const [selectedOpera, setSelectedOpera] = useState(null);
 
+  const opereMarkers = useMemo(() => 
+    
+    opere.map((opera, index) => (
+      (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
+      typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? (
+        <Marker
+          key={index}
+          latitude={opera.latitude}
+          longitude={opera.longitude}
+
+          onClick={e => {
+            e.originalEvent.stopPropagation();
+            setSelectedOpera(opera);
+          }}
+        />
+      ) : null
+    ))
+  , []);
+      
+
   return (
     <div className="navigazione-mappa-container">
       <Helmet>
@@ -39,8 +59,6 @@ const NavigazioneMappa = (props) => {
           content="NavigazioneMappa - exported project"
         />
       </Helmet>
-
-      <SearchBar rootClassName="search-bar-root-class-name" />
 
       <Map mapLib={maplibregl}
         initialViewState={{
@@ -52,21 +70,11 @@ const NavigazioneMappa = (props) => {
         mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
       >
           <NavigationControl position="top-right"></NavigationControl>
+          {opereMarkers}
 
-          {opere.map((opera, index) => (
-          (typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
-          typeof opera.longitude === 'number' && !isNaN(opera.longitude)) ? (
-            <Marker
-              key={index}
-              latitude={opera.latitude}
-              longitude={opera.longitude}
-              onClick={() => setSelectedOpera(opera)}
-            />
-          ) : null
-          ))}
-    
       </Map>
-
+      
+      <SearchBar rootClassName="search-bar-root-class-name" />
       <MainMenu rootClassName="main-menu-root-class-name" />
       
       {selectedOpera && (
@@ -79,6 +87,8 @@ const NavigazioneMappa = (props) => {
           indirizzo={selectedOpera.indirizzo}
           data={selectedOpera.data}
           descrizione={selectedOpera.descrizione}
+
+          onClose={() => setSelectedOpera(null)}
         />
       )}
      

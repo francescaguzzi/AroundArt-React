@@ -12,9 +12,9 @@
         "immagine": "https://assets.culturabologna.it/f009162f-f640-41a1-8b0b-f023fe2548c2-gutierrezmuralelettere-01.jpg/658e92357ddaf83a37526e47323880e7e339b4c0.jpg"
     },
 
-    {
-        "latitude": 44.492366,
-        "longitude": 11.348054,
+    { 
+        "latitude": 44.50231301977907,
+        "longitude": 11.33681399833809,
         "titolo": "Blu's Mural",
         "artista": "Blu",
         "categoria": "MURALE",
@@ -24,9 +24,9 @@
         "immagine": "https://www.artribune.com/wp-content/uploads/2016/03/Il-murale-di-BLu-per-il-cso-xm24-a-bologna-2048x1371.jpg"
     },
 
-    {
-    "latitude": 44.494717,
-    "longitude": 11.347187,
+    { 
+    "latitude": 44.49919267107451,
+    "longitude": 11.343655896258447,
     "titolo": "RECLAIM POETRY",
     "artista": "Cheap",
     "categoria": "POSTER",
@@ -37,8 +37,8 @@
     },
 
     {
-    "latitude": 44.492654,
-    "longitude": 11.353824,
+    "latitude": 44.49544933581604,
+    "longitude": 11.328736750640031,
     "titolo": "Zoo in Fuga",
     "artista": "Ericailcane",
     "categoria": "MURALE",
@@ -48,9 +48,9 @@
     "immagine": "https://cdn.zero.eu/uploads/2020/07/ericalcane3.jpg"
     },
 
-    {
-    "latitude": 44.493815,
-    "longitude": 11.349550,
+    { 
+    "latitude": 44.493386283942655,
+    "longitude": 11.345287038587456,
     "titolo": "Dolce Vita",
     "artista": "Lucamaleonte",
     "categoria": "MURALE",
