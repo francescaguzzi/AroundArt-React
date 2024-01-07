@@ -54,7 +54,12 @@ const NavigazioneMappa = (props) => {
       // Verifica se il clic è avvenuto al di fuori del componente VisualizzaOpera
       if (
         selectedOpera &&
-        e.target.closest('.visualizza-opera-root-class-name') === null
+        e.target.closest('.visualizza-opera-root-class-name') === null &&
+        e.target.closest('.visualizza-opera-bottonerecensioni') === null &&
+        e.target.closest('.visualizza-opera-scrivibottone') === null &&
+        e.target.closest('.visualizza-opera-scrivirecensione') === null &&
+        e.target.closest('.visualizza-opera-annulla') === null &&
+        e.target.closest('.visualizza-opera-invia') === null 
       ) {
         setSelectedOpera(null);
       }
