@@ -59,7 +59,8 @@ const NavigazioneMappa = (props) => {
         e.target.closest('.visualizza-opera-scrivibottone') === null &&
         e.target.closest('.visualizza-opera-scrivirecensione') === null &&
         e.target.closest('.visualizza-opera-annulla') === null &&
-        e.target.closest('.visualizza-opera-invia') === null 
+        e.target.closest('.visualizza-opera-invia') === null &&
+        e.target.closest('.visualizza-opera-icon') === null //ignorare questa brutalità sono di fretta..
       ) {
         setSelectedOpera(null);
       }

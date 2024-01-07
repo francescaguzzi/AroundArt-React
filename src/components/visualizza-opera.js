@@ -84,7 +84,7 @@ const VisualizzaOpera = (props) => {
             ></path>
           </svg>
           <h4 id="titoloRec" className="visualizza-opera-titolo1">
-            Titolo
+            {props.titolo}
           </h4>
           <div className="visualizza-opera-container1">
             <Recensione
@@ -121,7 +121,7 @@ const VisualizzaOpera = (props) => {
       {schedaAttiva === 2 && (
         <div className="visualizza-opera-scrivi-recensione">
           <h4 id="titoloRec2" className="visualizza-opera-titolo2">
-            Titolo
+            {props.titolo}
           </h4>
           <textarea
             id="recensione"
