@@ -26,6 +26,7 @@ import opere from '../datasets/opere.json';
 //   />;
 // }
 
+
 const NavigazioneMappa = (props) => {
 
   const [selectedOpera, setSelectedOpera] = useState(null);
