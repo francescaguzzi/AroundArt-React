@@ -7,7 +7,8 @@ import MainMenu from '../components/main-menu';
 import VisualizzaOpera from '../components/visualizza-opera';
 import './navigazione-mappa.css';
 
-import opere from '../datasets/opere.json';
+import * as opereJson from '../datasets/opere.json';
+import { useOpere } from '../opere-context';
 
 // function InteractiveMap() {
 //   const [viewport, setViewport] = useState({
@@ -28,6 +29,16 @@ import opere from '../datasets/opere.json';
 
 
 const NavigazioneMappa = (props) => {
+
+  let opere = [];
+
+  const {getOpere, inizializzaOpere} = useOpere();
+  if(getOpere().length === 0) {
+    inizializzaOpere(opereJson.default);
+    opere = opereJson.default;
+  }else {
+    opere = getOpere();
+  }
 
   const [selectedOpera, setSelectedOpera] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');

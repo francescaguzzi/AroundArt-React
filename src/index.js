@@ -22,35 +22,41 @@ import Signin from './views/signin'
 import NotFound from './views/not-found'
 
 import { AuthProvider } from './auth-context'
+import { OpereProvider } from './opere-context'
+import { useOpere} from './opere-context'
+import opere from './datasets/opere.json'
 
 const App = () => {
+  
   return (
     <Router>
-      <AuthProvider>
-      <Switch>
-        <Route component={GestionePreferiti} exact path="/gestione-preferiti" />
-        <Route component={GestioneUtente} exact path="/gestione-utente" />
-        <Route component={GestioneItinerari} exact path="/gestione-itinerari" />
-        <Route component={Home} exact path="/" />
-        <Route component={AdminHome} exact path="/admin-home" />
-        <Route
-          component={AdminGestioneOpere}
-          exact
-          path="/admin-gestione-opere"
-        />
-        <Route component={NavigazioneMappa} exact path="/navigazione-mappa" />
-        <Route
-          component={AdminGestioneEventi}
-          exact
-          path="/admin-gestione-eventi"
-        />
-        <Route component={VisualizzaEventi} exact path="/visualizza-eventi" />
-        <Route component={Login} exact path="/login" />
-        <Route component={Signin} exact path="/signin" />
-        <Route component={NotFound} path="**" />
-        <Redirect to="**" />
-      </Switch>
-      </AuthProvider>
+      <OpereProvider>
+        <AuthProvider>
+        <Switch>
+          <Route component={GestionePreferiti} exact path="/gestione-preferiti" />
+          <Route component={GestioneUtente} exact path="/gestione-utente" />
+          <Route component={GestioneItinerari} exact path="/gestione-itinerari" />
+          <Route component={Home} exact path="/" />
+          <Route component={AdminHome} exact path="/admin-home" />
+          <Route
+            component={AdminGestioneOpere}
+            exact
+            path="/admin-gestione-opere"
+          />
+          <Route component={NavigazioneMappa} exact path="/navigazione-mappa" />
+          <Route
+            component={AdminGestioneEventi}
+            exact
+            path="/admin-gestione-eventi"
+          />
+          <Route component={VisualizzaEventi} exact path="/visualizza-eventi" />
+          <Route component={Login} exact path="/login" />
+          <Route component={Signin} exact path="/signin" />
+          <Route component={NotFound} path="**" />
+          <Redirect to="**" />
+        </Switch>
+        </AuthProvider>
+      </OpereProvider>
     </Router>
   )
 }

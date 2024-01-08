@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Recensione from './recensione'
+import { useOpere } from '../opere-context'
 import './visualizza-opera.css'
 
 const VisualizzaOpera = (props) => {
 
+  const {togglePreferito, isPreferito} = useOpere();
   const [schedaAttiva, setSchedaAttiva] = useState(0)
-  var heartcheck = 0
+  var heartcheck = isPreferito(props.titolo);
 
   return (
     <div className={`visualizza-opera-container ${props.rootClassName} `}>
@@ -50,22 +52,23 @@ const VisualizzaOpera = (props) => {
             </span>
             <img
               alt="Vector5332"
-              src="/external/vector5332-13aa.svg"
+              src= "/external/vector5332-13aa.svg"
               className="visualizza-opera-vector"
             />
           </div>
           <img
             alt="heartcheckbox5340"
-            src="/external/heartcheckbox5340-okuh.svg"
+            src={heartcheck ? '/external/Property 1=heart-fill.svg' :'/external/heartcheckbox5340-okuh.svg'}
             className="visualizza-opera-heartcheckbox"
             // al click cambia l'immagine
             onClick={(e) => {
-              if (heartcheck === 0) {
+              togglePreferito(props.titolo);
+              if (heartcheck === false) {
               e.target.src = '/external/Property 1=heart-fill.svg'
-              heartcheck = 1
+              heartcheck = true;
               } else {
                 e.target.src = '/external/heartcheckbox5340-okuh.svg'
-                heartcheck = 0
+                heartcheck = false;
               }
             }}
           />
