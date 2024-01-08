@@ -161,8 +161,6 @@ const NavigazioneMappa = (props) => {
           indirizzo={selectedOpera.indirizzo}
           data={selectedOpera.data}
           descrizione={selectedOpera.descrizione}
-
-          titoloRec={selectedOpera.titolo}
         />
       )}
      
