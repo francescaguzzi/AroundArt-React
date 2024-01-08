@@ -160,7 +160,9 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.visualizza-itinerario-root-class-name {
+.visualizza-itinerario-root-class-name,
+.visualizza-itinerario-root-class-name1,
+.visualizza-itinerario-root-class-name2 {
   top: 40px;
   left: 4px;
   right: 0px;

@@ -70,6 +70,7 @@
 .search-bar-root-class-name {
   top: var(--dl-space-space-fiveunits);
   left: 15px;
+  top: 30px;
   position: absolute;
   align-self: center;
 }
