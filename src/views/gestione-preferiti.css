@@ -19,11 +19,11 @@
 }
 .gestione-preferiti-button {
   color: var(--dl-color-gray-white);
-  width: var(--dl-size-size-xlarge);
-  height: var(--dl-size-size-small);
+  width: 200px;
+  height: 45px;
   align-self: center;
   font-style: normal;
-  margin-top: -6px;
+  margin-top: -15px;
   font-weight: 700;
   border-width: 0px;
   border-radius: 15px;

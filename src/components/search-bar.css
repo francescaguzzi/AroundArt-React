@@ -69,7 +69,7 @@
 }
 .search-bar-root-class-name {
   top: var(--dl-space-space-fiveunits);
-  left: 87px;
+  left: 15px;
   position: absolute;
   align-self: center;
 }
