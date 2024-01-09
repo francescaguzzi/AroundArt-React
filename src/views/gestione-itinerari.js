@@ -14,7 +14,9 @@ const GestioneItinerari = (props) => {
     const handleClickOutside = (event) => {
       if (itineraryVisible &&
           event.target.closest('.visualizza-itinerario-root-class-name') === null &&
-          event.target.closest('.visualizza-itinerario-bottoni') === null) {
+          event.target.closest('.visualizza-itinerario-bottoni') === null &&
+          event.target.closest('.visualizza-itinerario-schermo2') === null &&
+          event.target.closest('.visualizza-itinerario-schermo3') === null) {
         setItineraryVisible('');
       }
     };
