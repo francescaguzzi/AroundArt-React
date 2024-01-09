@@ -42,35 +42,39 @@ const VisualizzaItinerario = (props) => {
   }, [list]);
 
   const drawItineraryLines = ({ coordinates }) => {
-    
     return useMemo(() => {
-      if (coordinates.lenght < 2) {
+      if (coordinates.length < 2) {
         return null;
       }
-
-      return (
-        <Source type="geojson" data={{
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: coordinates
-          },
-        }}>
-          <Layer 
-            id="lineLayer"
-            type="line"
-            layout={{
-              'line-join': 'round',
-              'line-cap': 'round'
-            }}
-            paint={{
-              'line-color': '#FFFFFF',
-              'line-width': 8
-            }}
-          />
-        </Source>
-      );
+  
+      const lines = [];
+      for (let i = 0; i < coordinates.length - 1; i++) {
+        lines.push(
+          <Source key={i} type="geojson" data={{
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'LineString',
+              coordinates: [coordinates[i], coordinates[i + 1]],
+            },
+          }}>
+            <Layer 
+              id={`lineLayer-${i}`}
+              type="line"
+              layout={{
+                'line-join': 'round',
+                'line-cap': 'round',
+              }}
+              paint={{
+                'line-color': '#2a9d8f',
+                'line-width': 8,
+              }}
+            />
+          </Source>
+        );
+      }
+  
+      return lines;
     }, [coordinates]);
   };
 
@@ -86,9 +90,9 @@ const VisualizzaItinerario = (props) => {
             initialViewState={{
               latitude: 44.4949, // Latitudine di Bologna
               longitude: 11.3426, // Longitudine di Bologna
-              zoom: 11
+              zoom: 20
             }}
-            style={{width: '363px', height: '492px'}}
+            style={{width: '360px', height: '490px'}}
             mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
           >
               {drawItinerary}
