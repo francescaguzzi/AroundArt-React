@@ -25,27 +25,26 @@ const VisualizzaItinerario = (props) => {
   const [itineraryCoordinates, setItineraryCoordinates] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
 
-  useEffect(() => {
+  const updateItineraryCoordinates = () => {
     const coordinates = list.filter((opera) => typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
-                                             typeof opera.longitude === 'number' && !isNaN(opera.longitude))
-                          .map((opera) => [opera.longitude, opera.latitude]);
+                                               typeof opera.longitude === 'number' && !isNaN(opera.longitude))
+                            .map((opera) => [opera.longitude, opera.latitude]);
 
     setItineraryCoordinates(coordinates);
-  }, [schermataAttiva, list]);
+  };
 
+  const drawItinerary = itineraryCoordinates.map((coordinate, index) => (
+    <Marker
+      key={index}
+      latitude={coordinate[1]}
+      longitude={coordinate[0]}
+      onClick={() => setPopupInfo({ opera, coordinate })}
+    />
+  ));
 
-  const drawItinerary = useMemo(() => {
-
-    return itineraryCoordinates.map((coordinate, index) => (
-      <Marker
-        key={index}
-        latitude={coordinate[1]}
-        longitude={coordinate[0]}
-        onClick={() => setPopupInfo({ coordinate: coordinate, opera: list[index] })}
-      >
-      </Marker>
-    ));
-  }, [itineraryCoordinates, setPopupInfo]);
+  useEffect(() => {
+    updateItineraryCoordinates();
+  }, [list, schermataAttiva]);
 
   const drawItineraryLines = ({ coordinates }) => {
     return useMemo(() => {
