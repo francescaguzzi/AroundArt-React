@@ -15,7 +15,7 @@ const GestioneUtente = (props) => {
 
   let username;
   let email;
-  if (getRegistrationInfo().username === '') {
+  if (getRegistrationInfo().username === null) {
     username = 'Admin';
     email = 'admin@aroundart.it';
   } else {

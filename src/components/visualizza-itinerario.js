@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react/cjs/react.development'
 
 import PropTypes from 'prop-types'
 
@@ -34,6 +34,7 @@ const VisualizzaItinerario = (props) => {
     setItineraryCoordinates(coordinates);
 
     return coordinates.map((coordinate, index) => (
+
       <Marker
         key={index}
         latitude={coordinate[1]}
