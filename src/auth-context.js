@@ -10,15 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [username, setUsername] = useState('');
   const [users, setUsers] = useState([]);
 
-  // user admin di default nell'array
-  setUsers([
-    {
-      username: 'admin',
-      email: 'admin@aroundart.it',
-      password: 'admin'
-    }
-  ]);
-
   const login = (user) => {
     setAuthenticated(true);
     setUsername(user);
@@ -65,6 +56,16 @@ export const AuthProvider = ({ children }) => {
   const deleteUser = (username) => {
     setUsers(users.filter((user) => user.username !== username));
   };
+
+  useEffect(() => {
+    // Aggiungi un utente admin quando il componente viene montato
+    const adminUser = {
+      username: 'admin',
+      email: 'admin@aroundart.it',
+      password: 'admin'
+    };
+    setUsers([adminUser]);
+  }, []);
 
   return (
     <AuthContext.Provider value={{ authenticated, username, users, login, logout, register, getRegistrationInfo , updateRegistrationInfo, deleteUser}}>
