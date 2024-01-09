@@ -42,13 +42,6 @@ const VisualizzaEventi = (props) => {
           eventsVisible = {setEventsVisible}
         ></EventoLista>
         <EventoLista
-          data="7 febbraio 2024"
-          luogo="Via del Pratello 90"
-          titolo="Incontro con artisti di street art"
-          rootClassName="evento-lista-root-class-name3"
-          eventsVisible = {setEventsVisible}
-        ></EventoLista>
-        <EventoLista
           data="Marzo 2024"
           luogo="MamBo"
           titolo="Mostra di arte contemporanea"
