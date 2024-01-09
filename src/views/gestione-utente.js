@@ -12,17 +12,8 @@ import './gestione-utente.css'
 const GestioneUtente = (props) => {
   
   const { getRegistrationInfo } = useAuth();
-
-  let username;
-  let email;
-  if (getRegistrationInfo().username === null) {
-    username = 'Admin';
-    email = 'admin@aroundart.it';
-  } else {
-    username = getRegistrationInfo().username;
-    email = getRegistrationInfo().email;
-  }
-
+  const { username, email } = getRegistrationInfo();
+ 
   const [isModificaVisible, setIsModificaVisible] = useState(false);
   const [isEliminaVisible, setIsEliminaVisible] = useState(false);
 

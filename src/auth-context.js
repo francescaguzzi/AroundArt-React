@@ -10,6 +10,15 @@ export const AuthProvider = ({ children }) => {
   const [username, setUsername] = useState('');
   const [users, setUsers] = useState([]);
 
+  // user admin di default nell'array
+  setUsers([
+    {
+      username: 'admin',
+      email: 'admin@aroundart.it',
+      password: 'admin'
+    }
+  ]);
+
   const login = (user) => {
     setAuthenticated(true);
     setUsername(user);

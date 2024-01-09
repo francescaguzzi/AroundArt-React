@@ -20,7 +20,12 @@ const Login = (props) => {
     
     const user = users.find((user) => user.username === username && user.password === password);
     
-    if (user || username === 'admin' && password === 'admin') {
+    if (username === '' || password === '') {
+      console.log('username o password vuoti');
+      setErrorMessage('    Inserisci username e password.');
+    }
+
+    if (user) {
       login(username);
       console.log('login avvenuto con successo');
       history.push('/navigazione-mappa'); // naviga verso la pagina di destinazione
