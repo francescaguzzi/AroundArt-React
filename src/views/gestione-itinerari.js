@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import ItinerarioLista from '../components/itinerario-lista'
 import VisualizzaItinerario from '../components/visualizza-itinerario'
@@ -9,6 +9,21 @@ import './gestione-itinerari.css'
 const GestioneItinerari = (props) => {
   const [itineraryVisible, setItineraryVisible] = useState('');
   const [numItinerari, setNumItinerari] = useState(3);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (itineraryVisible &&
+          event.target.closest('.visualizza-itinerario-root-class-name') === null) {
+        setItineraryVisible('');
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [itineraryVisible]);
 
   const printItinerari = () => {
     let itinerari = [];

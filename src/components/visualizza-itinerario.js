@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 
 import PropTypes from 'prop-types'
 
-import Map, { Marker, Source, Layer } from 'react-map-gl';
+import Map, { Marker, Source, Layer, Popup } from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
 
 import OperaLista from './opera-lista'
@@ -23,6 +23,7 @@ const VisualizzaItinerario = (props) => {
   const {getPreferiti} = useOpere();
   const [list, setList] = useState(getPreferiti());
   const [itineraryCoordinates, setItineraryCoordinates] = useState([]);
+  const [popupInfo, setPopupInfo] = useState(null);
 
   const drawItinerary = useMemo(() => {
 
@@ -37,7 +38,13 @@ const VisualizzaItinerario = (props) => {
         key={index}
         latitude={coordinate[1]}
         longitude={coordinate[0]}
-      />
+      >
+        <div 
+          className="visualizza-itinerario-marker"
+          onClick={() => setPopupInfo({opera, coordinate})}
+        />
+      </Marker>
+
     ));
   }, [list]);
 
@@ -90,13 +97,29 @@ const VisualizzaItinerario = (props) => {
             initialViewState={{
               latitude: 44.4949, // Latitudine di Bologna
               longitude: 11.3426, // Longitudine di Bologna
-              zoom: 20
+              zoom: 14
             }}
             style={{width: '360px', height: '490px'}}
             mapStyle="https://api.maptiler.com/maps/streets/style.json?key=IUvgg7ycmWWkPYjWYIG7"
           >
               {drawItinerary}
               {drawItineraryLines({ coordinates: itineraryCoordinates })}
+
+              {popupInfo && (
+                <Popup 
+                  tipSize={5}
+                  anchor="top"
+                  longitude={popupInfo.coordinate[0]}
+                  latitude={popupInfo.coordinate[1]}
+                  closeOnClick={false}
+                  onClose={() => setPopupInfo(null)}
+                >
+                  <div className="visualizza-itinerario-popup">
+                    <h3>{popupInfo.opera.titolo}</h3>
+                    <p>{popupInfo.opera.indirizzo}</p>
+                  </div>
+                </Popup>
+              )}
 
           </Map>
 
