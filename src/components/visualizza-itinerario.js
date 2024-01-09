@@ -12,7 +12,7 @@ import {useOpere} from '../opere-context'
 
 const VisualizzaItinerario = (props) => {
 
-  const [schermataAttiva, setSchermataAttiva] = useState(0)
+  const [schermataAttiva, setSchermataAttiva] = useState(0);
   /* const listFavorites = [
     {artista: "Exit Enter", image_src: "/opere/exit_via-belle-arti-%232_0-200h.jpg", indirizzo: "Via delle Belle Arti"},
     {artista: "EricaIlCane", image_src: "/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg", indirizzo: "via Mascarella 26A, libreria Moda Infoshop"},
@@ -38,7 +38,7 @@ const VisualizzaItinerario = (props) => {
       key={index}
       latitude={coordinate[1]}
       longitude={coordinate[0]}
-      onClick={() => setPopupInfo({ opera, coordinate })}
+      onClick={() => setPopupInfo({ coordinate: coordinate, opera: list[index] })}
     />
   ));
 
@@ -147,7 +147,7 @@ const VisualizzaItinerario = (props) => {
               key={index}
               index={index}
               artista={item.artista}
-              image_src={item.image_src}
+              image_src={item.immagine}
               indirizzo={item.indirizzo}
               titolo={item.titolo}
               list={list}
