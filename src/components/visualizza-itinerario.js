@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import PropTypes from 'prop-types'
 
@@ -25,26 +25,27 @@ const VisualizzaItinerario = (props) => {
   const [itineraryCoordinates, setItineraryCoordinates] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
 
-  const drawItinerary = useMemo(() => {
-
+  useEffect(() => {
     const coordinates = list.filter((opera) => typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
-                                               typeof opera.longitude === 'number' && !isNaN(opera.longitude))
-                            .map((opera) => [opera.longitude, opera.latitude]);
+                                             typeof opera.longitude === 'number' && !isNaN(opera.longitude))
+                          .map((opera) => [opera.longitude, opera.latitude]);
 
     setItineraryCoordinates(coordinates);
+  }, [schermataAttiva, list]);
 
-    return coordinates.map((coordinate, index) => (
 
+  const drawItinerary = useMemo(() => {
+
+    return itineraryCoordinates.map((coordinate, index) => (
       <Marker
         key={index}
         latitude={coordinate[1]}
         longitude={coordinate[0]}
-        onClick={() => setPopupInfo({opera, coordinate})}
+        onClick={() => setPopupInfo({ coordinate: coordinate, opera: list[index] })}
       >
       </Marker>
-
     ));
-  }, [list, setPopupInfo]);
+  }, [itineraryCoordinates, setPopupInfo]);
 
   const drawItineraryLines = ({ coordinates }) => {
     return useMemo(() => {
