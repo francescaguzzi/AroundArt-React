@@ -47,41 +47,40 @@ const VisualizzaItinerario = (props) => {
   }, [list, schermataAttiva]);
 
   const drawItineraryLines = ({ coordinates }) => {
-    return useMemo(() => {
-      if (coordinates.length < 2) {
-        return null;
-      }
+    
+    if (coordinates.length < 2) {
+      return null;
+    }
+
+    const lines = [];
+    for (let i = 0; i < coordinates.length - 1; i++) {
+      lines.push(
+        <Source key={i} type="geojson" data={{
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            type: 'LineString',
+            coordinates: [coordinates[i], coordinates[i + 1]],
+          },
+        }}>
+          <Layer 
+            id={`lineLayer-${i}`}
+            type="line"
+            layout={{
+              'line-join': 'round',
+              'line-cap': 'round',
+            }}
+            paint={{
+              'line-color': '#2a9d8f',
+              'line-width': 8,
+            }}
+          />
+        </Source>
+      );
+    }
   
-      const lines = [];
-      for (let i = 0; i < coordinates.length - 1; i++) {
-        lines.push(
-          <Source key={i} type="geojson" data={{
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [coordinates[i], coordinates[i + 1]],
-            },
-          }}>
-            <Layer 
-              id={`lineLayer-${i}`}
-              type="line"
-              layout={{
-                'line-join': 'round',
-                'line-cap': 'round',
-              }}
-              paint={{
-                'line-color': '#2a9d8f',
-                'line-width': 8,
-              }}
-            />
-          </Source>
-        );
-      }
-  
-      return lines;
-    }, [coordinates]);
-  };
+    return lines;
+  }
 
   return (
     <div className={`visualizza-itinerario-container ${props.rootClassName} `}>
