@@ -44,7 +44,7 @@ const VisualizzaItinerario = (props) => {
       </Marker>
 
     ));
-  }, [list]);
+  }, [list, setPopupInfo]);
 
   const drawItineraryLines = ({ coordinates }) => {
     return useMemo(() => {
