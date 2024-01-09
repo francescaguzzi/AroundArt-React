@@ -13,11 +13,14 @@ const GestioneUtente = (props) => {
   
   const { getRegistrationInfo } = useAuth();
 
+  let username;
+  let email;
   if (getRegistrationInfo() === null) {
     username = 'Admin';
     email = 'admin@aroundart.it';
   } else {
-    const { username, email } = getRegistrationInfo();
+    username = getRegistrationInfo().username;
+    email = getRegistrationInfo().email;
   }
 
   const [isModificaVisible, setIsModificaVisible] = useState(false);
