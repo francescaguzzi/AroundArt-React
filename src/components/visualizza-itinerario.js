@@ -38,11 +38,8 @@ const VisualizzaItinerario = (props) => {
         key={index}
         latitude={coordinate[1]}
         longitude={coordinate[0]}
+        onClick={() => setPopupInfo({opera, coordinate})}
       >
-        <div 
-          className="visualizza-itinerario-marker"
-          onClick={() => setPopupInfo({opera, coordinate})}
-        />
       </Marker>
 
     ));
