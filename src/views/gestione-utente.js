@@ -13,6 +13,8 @@ const GestioneUtente = (props) => {
   
   const { getRegistrationInfo } = useAuth();
   const { username, email } = getRegistrationInfo();
+  console.log(username);
+  console.log(email);
  
   const [isModificaVisible, setIsModificaVisible] = useState(false);
   const [isEliminaVisible, setIsEliminaVisible] = useState(false);

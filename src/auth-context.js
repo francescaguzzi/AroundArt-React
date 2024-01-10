@@ -25,7 +25,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const getRegistrationInfo = () => {
-    return users[0];
+    if(username === 'admin') {
+      return users[0];
+    }else {
+      return users[1];
+    }
     return users.find((user) => user.username === username);
   };
 
