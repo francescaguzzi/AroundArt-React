@@ -37,8 +37,21 @@ export const OpereProvider = ({ children }) => {
     return listOpere.find((opera) => opera.titolo === titolo).preferito;
   }
 
+  const deletePreferito = (titolo) => {
+    setListOpere(listOpere.map((opera) => {
+      if (opera.titolo === titolo) {
+        return {
+          ...opera,
+          preferito: false
+        }
+      } else {
+        return opera;
+      }
+    }));
+  }
+
   return (
-    <OpereContext.Provider value={{ inizializzaOpere, togglePreferito, getOpere, getPreferiti, isPreferito}}>
+    <OpereContext.Provider value={{ inizializzaOpere, togglePreferito, getOpere, getPreferiti, isPreferito, deletePreferito}}>
       {children}
     </OpereContext.Provider>
   );
