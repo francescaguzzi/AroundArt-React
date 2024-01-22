@@ -9,7 +9,7 @@ import {useOpere} from '../opere-context'
 
 const GestionePreferiti = (props) => {
   
-  const {getPreferiti} = useOpere();
+  const {getPreferiti, creaItinerario} = useOpere();
   const [list, setList] = useState(getPreferiti());
 
   return (
@@ -35,7 +35,7 @@ const GestionePreferiti = (props) => {
             ></OperaLista>
           ))}
       </div>
-      <button type="button" className="gestione-preferiti-button button">
+      <button type="button" className="gestione-preferiti-button button" onClick={() => creaItinerario(list)}>
         Crea il tuo itinerario!
       </button>
       <MainMenu rootClassName="main-menu-root-class-name3"></MainMenu>

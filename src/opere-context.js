@@ -7,6 +7,8 @@ const OpereContext = createContext();
 export const OpereProvider = ({ children }) => {
 
   const [listOpere, setListOpere] = useState([]);
+  const [itinerari, setItinerari] = useState([]); // lista degli itinerari creati
+
 
   const inizializzaOpere = (list) => {
     setListOpere(list);
@@ -50,8 +52,55 @@ export const OpereProvider = ({ children }) => {
     }));
   }
 
+  // crea un itinerario a partire dalla lista di opere preferite
+  /* const creaItinerario = (list) => {
+    let itinerario = [];
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].preferito) {
+        itinerario.push(list[i]);
+      }
+    }
+    
+    setItinerari([...itinerari, itinerario]);
+  } */
+
+  const creaItinerario = (list) => {
+    const itinerario = list.filter((opera) => opera.preferito);
+    setItinerari((prevItinerari) => [...prevItinerari, itinerario]);
+  }
+
+  const removeOperaFromItinerario = (titolo) => {
+    setItinerari(itinerari.map((itinerario) => {
+      return itinerario.filter((opera) => opera.titolo !== titolo);
+    }));
+  }
+
+  const getItinerari = () => {
+    return itinerari;
+  }
+
+  const getItinerario = (index) => {
+    return itinerari[index];
+  }
+
+  const deleteItinerario = (index) => {
+    setItinerari(itinerari.filter((itinerario, i) => i !== index));
+  }
+
   return (
-    <OpereContext.Provider value={{ inizializzaOpere, togglePreferito, getOpere, getPreferiti, isPreferito, deletePreferito}}>
+    <OpereContext.Provider value={{ 
+        inizializzaOpere, 
+        togglePreferito, 
+        getOpere, 
+        getPreferiti, 
+        isPreferito, 
+        deletePreferito,
+        creaItinerario,
+        removeOperaFromItinerario,
+        getItinerari,
+        getItinerario,
+        deleteItinerario
+        }}>
       {children}
     </OpereContext.Provider>
   );

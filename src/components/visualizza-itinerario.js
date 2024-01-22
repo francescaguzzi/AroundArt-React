@@ -12,18 +12,14 @@ import {useOpere} from '../opere-context'
 
 const VisualizzaItinerario = (props) => {
 
+  const {getItinerario, deleteItinerario} = useOpere();
   const [schermataAttiva, setSchermataAttiva] = useState(0);
-  /* const listFavorites = [
-    {artista: "Exit Enter", image_src: "/opere/exit_via-belle-arti-%232_0-200h.jpg", indirizzo: "Via delle Belle Arti"},
-    {artista: "EricaIlCane", image_src: "/opere/serranda_via%20mascarella%2026a%2C%20modo%20-200h.jpg", indirizzo: "via Mascarella 26A, libreria Moda Infoshop"},
-    {artista: "500 Anni dalla Conquista dell'America", image_src: "/opere/gutierrez_zamboni3-200h.png", indirizzo: "Via Zamboni 38"}
-  ]
-  const [list, setList] = useState(listFavorites); */
-
-  const {getPreferiti} = useOpere();
-  const [list, setList] = useState(getPreferiti());
+  
   const [itineraryCoordinates, setItineraryCoordinates] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
+
+  const index = props.index;
+  const list = getItinerario(index) || [];
 
   const updateItineraryCoordinates = () => {
     const coordinates = list.filter((opera) => typeof opera.latitude === 'number' && !isNaN(opera.latitude) &&
@@ -180,7 +176,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-confermaelimina button"
-              onClick={() => {props.itineraryVisible(false); props.deleteItinerario()}}
+              onClick={() => {props.itineraryVisible(false); deleteItinerario(index)}}
 
             >
               <span className="visualizza-itinerario-text2">{props.text2}</span>
@@ -193,6 +189,7 @@ const VisualizzaItinerario = (props) => {
 }
 
 VisualizzaItinerario.defaultProps = {
+  index: 0,
   rootClassName: '',
   titolo: 'Senza titolo',
   text21: 'Annulla',
@@ -204,6 +201,7 @@ VisualizzaItinerario.defaultProps = {
 }
 
 VisualizzaItinerario.propTypes = {
+  index: PropTypes.number.isRequired,
   rootClassName: PropTypes.string,
   titolo: PropTypes.string,
   text21: PropTypes.string,
