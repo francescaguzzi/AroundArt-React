@@ -24,6 +24,7 @@ const GestionePreferiti = (props) => {
       <div className="gestione-preferiti-lista-opere">
           {list.map((item, index) => (
             <OperaLista
+              typelist={0}
               key={index}
               index={index}
               artista={item.artista}

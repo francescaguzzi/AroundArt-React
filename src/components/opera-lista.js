@@ -9,6 +9,8 @@ const OperaLista = (props) => {
 
   const {deletePreferito, removeOperaFromItinerario} = useOpere();
 
+  const typelist = props.typelist;
+
   return (
     <div className={`opera-lista-container ${props.rootClassName} `}>
       <img
@@ -29,11 +31,16 @@ const OperaLista = (props) => {
       </div>
       <svg viewBox="0 0 1024 1024" className="opera-lista-delete-icon"
       onClick={() => {
-        const list = [...props.list];
-        list.splice(props.index, 1);
-        props.setList(list);
-        deletePreferito(props.titolo);
-        removeOperaFromItinerario(props.titolo);
+        if (typelist === 0) {
+          const list = [...props.list];
+          list.splice(props.index, 1);
+          props.setList(list);
+          deletePreferito(props.titolo);
+        }
+        else if (typelist === 1) {
+          removeOperaFromItinerario(props.titolo);
+        }
+        
       }}>
         <path
           d="M512 170.667c-188.544 0-341.333 152.832-341.333 341.333s152.789 341.333 341.333 341.333 341.333-152.832 341.333-341.333-152.789-341.333-341.333-341.333zM670.165 609.835c16.683 16.683 16.683 43.648 0 60.331-8.32 8.32-19.243 12.501-30.165 12.501s-21.845-4.181-30.165-12.501l-97.835-97.835-97.835 97.835c-8.32 8.32-19.243 12.501-30.165 12.501s-21.845-4.181-30.165-12.501c-16.683-16.683-16.683-43.648 0-60.331l97.835-97.835-97.835-97.835c-16.683-16.683-16.683-43.648 0-60.331s43.648-16.683 60.331 0l97.835 97.835 97.835-97.835c16.683-16.683 43.648-16.683 60.331 0s16.683 43.648 0 60.331l-97.835 97.835 97.835 97.835z"
@@ -45,6 +52,7 @@ const OperaLista = (props) => {
 }
 
 OperaLista.defaultProps = {
+  typelist: 0,
   indirizzo: 'indirizzo',
   titolo: 'Senza titolo',
   rootClassName: '',
@@ -54,6 +62,7 @@ OperaLista.defaultProps = {
 }
 
 OperaLista.propTypes = {
+  typelist: PropTypes.number,
   indirizzo: PropTypes.string,
   titolo: PropTypes.string,
   rootClassName: PropTypes.string,

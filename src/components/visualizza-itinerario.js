@@ -139,6 +139,7 @@ const VisualizzaItinerario = (props) => {
           <div className="visualizza-itinerario-container1">
           {list.map((item, index) => (
             <OperaLista
+              typelist={1}
               key={index}
               index={index}
               artista={item.artista}
