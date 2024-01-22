@@ -8,6 +8,12 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+
+::placeholder {
+  color: var(--dl-color-gray-white);
+  opacity: 1;
+}
+
 .search-bar-searchbutton {
   color: transparent;
   width: 55px;
