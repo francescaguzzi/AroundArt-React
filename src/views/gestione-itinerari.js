@@ -29,7 +29,10 @@ const GestioneItinerari = (props) => {
           event.target.closest('.visualizza-itinerario-root-class-name') === null &&
           event.target.closest('.visualizza-itinerario-bottoni') === null &&
           event.target.closest('.visualizza-itinerario-schermo2') === null &&
-          event.target.closest('.visualizza-itinerario-schermo3') === null) 
+          event.target.closest('.visualizza-itinerario-schermo3') === null && 
+          event.target.closest('.visualizza-itinerario-container1') === null &&
+          event.target.closest('.visualizza-itinerario-confirmbutton') === null && 
+          event.target.closest('.visualizza-itinerario-annulla button') === null)
         
         {
         setItineraryVisible('');
