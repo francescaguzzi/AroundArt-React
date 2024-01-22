@@ -16,9 +16,11 @@ const GestioneItinerari = (props) => {
 
 
   const handleDeleteItinerario = () => {
-    deleteItinerario(parseInt(itineraryVisible.split(' ')[1]) - 1);
+    
     setItineraryVisible('');
-    //setNumItinerari(numItinerari - 1);
+    setNumItinerari(numItinerari - 1);
+    deleteItinerario(parseInt(itineraryVisible.split(' ')[1]) - 1);
+  
   }; 
 
   useEffect(() => {
