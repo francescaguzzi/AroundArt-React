@@ -176,7 +176,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-confermaelimina button"
-              onClick={() => {props.itineraryVisible(false); deleteItinerario(index)}}
+              onClick={() => {props.itineraryVisible(false); props.handleDeleteItinerario();}}
 
             >
               <span className="visualizza-itinerario-text2">{props.text2}</span>

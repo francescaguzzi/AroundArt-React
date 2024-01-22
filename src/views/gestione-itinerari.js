@@ -14,14 +14,12 @@ const GestioneItinerari = (props) => {
   const [itineraryVisible, setItineraryVisible] = useState('');
   const [numItinerari, setNumItinerari] = useState(getItinerari().length);
 
-  /* const handleOpenItinerario = (titolo) => {
-    setItineraryVisible(titolo);
-  };
 
   const handleDeleteItinerario = () => {
-    deleteItinerario(itineraryVisible);
+    deleteItinerario(parseInt(itineraryVisible.split(' ')[1]) - 1);
     setItineraryVisible('');
-  }; */
+    //setNumItinerari(numItinerari - 1);
+  }; 
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -79,6 +77,7 @@ const GestioneItinerari = (props) => {
           titolo={itineraryVisible}
           rootClassName="visualizza-itinerario-root-class-name"
           itineraryVisible = {setItineraryVisible}
+          deleteItinerario = {handleDeleteItinerario}
         ></VisualizzaItinerario>
       )}
 
