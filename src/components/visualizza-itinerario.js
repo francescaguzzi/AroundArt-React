@@ -146,7 +146,6 @@ const VisualizzaItinerario = (props) => {
               indirizzo={item.indirizzo}
               titolo={item.titolo}
               list={list}
-              setList={setList}
             ></OperaLista>
           ))}
           </div>
