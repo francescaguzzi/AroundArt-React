@@ -9,8 +9,8 @@
   justify-content: flex-start;
 }
 
-::placeholder {
-  color: var(--dl-color-gray-white);
+.search-bar-textinput::placeholder {
+  color: white;
   opacity: 1;
 }
 
@@ -49,7 +49,7 @@
   justify-content: flex-start;
 }
 .search-bar-textinput {
-  color: var(--dl-color-gray-white);
+  color: white;
   width: 324px;
   height: 55px;
   align-self: flex-start;

@@ -35,7 +35,7 @@ const SearchBar = (props) => {
           <input
             type="text"
             id="ricerca"
-            placeholder="Cerca opera o categoria..."
+            placeholder="Cerca opera o artista..."
             onChange={handleInputChange}
             value={searchTerm}
             className="search-bar-textinput input"
