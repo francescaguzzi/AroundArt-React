@@ -14,7 +14,6 @@ const VisualizzaItinerario = (props) => {
 
   const {getItinerario, deleteItinerario} = useOpere();
   const [schermataAttiva, setSchermataAttiva] = useState(0);
-  
   const [itineraryCoordinates, setItineraryCoordinates] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
 
@@ -176,7 +175,7 @@ const VisualizzaItinerario = (props) => {
             <button
               type="button"
               className="visualizza-itinerario-confermaelimina button"
-              onClick={() => {props.itineraryVisible(false); props.handleDeleteItinerario();}}
+              onClick={() => {props.itineraryVisible(false); props.deleteItinerario();}}
 
             >
               <span className="visualizza-itinerario-text2">{props.text2}</span>
